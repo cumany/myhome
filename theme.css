@@ -202,10 +202,10 @@
 	--theme-glow-diffuse: hsla(var(--color-base-purple), 35%, 0.4);
 
 	/* pagefind */
-	--pagefind-ui-primary: #eeeeee;
-	--pagefind-ui-text: var(--theme-text);
-	--pagefind-ui-background: var(--theme-bg);
-	--pagefind-ui-border: var(--theme-glow-highlight);
+	--pagefind-ui-primary: rgb(226 232 240);
+	--pagefind-ui-text: rgb(226 232 240);
+	--pagefind-ui-background:  rgb(30 41 59/1);
+	--pagefind-ui-border: rgb(51 65 85);
 	--pagefind-ui-tag: #152028;
 	--pagefind-ui-scale: 0.7;
 	--pagefind-ui-border-width: 2px;
