@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" x-data="theme()" :class="$store.app.isDark ? 'dark theme-dark' : ''" class="dark theme-dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/svg+xml" href="/homepage/img/favicon.svg">
+    <meta name="generator" content="Astro v2.0.6">
+    <title>PKMer - Home</title>
+  <link rel="stylesheet" href="/homepage/_astro/404.3d19b428.css" />
+<link rel="stylesheet" href="/homepage/_astro/introduction.e2dc6185.css" />
+<link rel="stylesheet" href="/homepage/_astro/index.725c668f.css" /><script type="module" src="/homepage/_astro/hoisted.cdf20846.js"></script></head>
+  
+  <body x-data="homeSpy()" class="homebg">
+
+    <!-- Navbar -->
+    <div x-cloak x-data="navbar()" x-on:scroll.window="scroll()" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/30 dark:shadow-muted-900/40' : ''">
+	<div class="w-full max-w-7xl mx-auto flex items-center justify-between pl-4 pr-0 lg:pr-4 font-sans">
+		<!-- Left -->
+		<div class="w-full lg:w-auto flex items-center gap-6">
+			<a href="/homepage/" class="no-underline text-inherit flex items-center gap-3">
+				<div class="transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'text-rose-500 rotate-180' : 'text-primary-600'">
+					<svg class="fill-current" :class="'w-7 h-7'" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M395.631 98.837C358.783 45.867 309.195 16.696 256 16.696S153.217 45.867 116.369 98.837c-35.565 51.124-55.151 118.797-55.151 190.554 0 113.54 87.379 205.913 194.783 205.913s194.783-92.373 194.783-205.913c-.001-71.756-19.588-139.43-55.153-190.554z" style="" fill="#ffc170" class=""></path><path d="M256 495.304c107.403 0 194.783-92.373 194.783-205.913 0-71.757-19.586-139.43-55.151-190.554C358.783 45.867 309.195 16.696 256 16.696" style="" fill="#e1a05a" data-original="#ffd6a0" class=""></path><path d="M0 128h55.652v33.391H0z" style="" fill="#a0bdd4" class=""></path><path d="M13.053 51.94h55.65v33.391h-55.65z" style="" transform="rotate(-160.527 40.878 68.636)" fill="#a0bdd4" class=""></path><path d="M456.348 128H512v33.391h-55.652z" style="" fill="#a0bdd4" class=""></path><path d="M454.411 40.807h33.391v55.65h-33.391z" style="" transform="rotate(-109.469 471.111 68.636)" fill="#a0bdd4" class=""></path><path d="m187.719 277.315 14.949-29.896-47.598-21.154-93.659 51.085c-.124 4-.194 8.013-.194 12.041 0 8.564.505 17.005 1.471 25.298l93.892-51.214 31.139 13.84zM450.63 278.997l-105.587-52.794-89.463 44.731-22.369-9.942-14.948 29.896 38.155 16.958 88.625-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228c.001-3.476-.059-6.938-.152-10.394z" style="" fill="#f8f8f8" class=""></path><path d="m450.63 278.997-105.587-52.794-89.463 44.731.839 36.913 88.624-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228 382.07 382.07 0 0 0-.152-10.395z" style="" fill="#fef5ea" class=""></path></g></svg>
+				</div>
+				<span class="font-sans font-extrabold text-lg tracking-widest uppercase feat dark:text-muted-100">PKMer</span>
+			</a>
+
+			<div class="flex items-center justify-center h-20 w-20 lg:hidden ml-auto">
+				<button class="flex bg-transparent relative justify-center items-center w-10 h-10 focus:outline-none lg:hidden scale-90" @click="$store.app.mobileOpen = !$store.app.mobileOpen">
+  <div class="block top-1/2 left-6 w-4 -translate-x-1/2 -translate-y-1/2">
+    <span class="block absolute w-7 h-0.5 bg-current transition duration-500 ease-in-out" :class="[
+        $store.app.mobileOpen ? 'rotate-45' : '-translate-y-2',
+        scrolled || $store.app.mobileOpen ? 'text-primary-500' : 'text-muted-800 dark:text-white'
+      ]"></span>
+    <span class="block absolute w-5 h-0.5 bg-current transition duration-500 ease-in-out" :class="[
+        $store.app.mobileOpen ? 'opacity-0' : '',
+        scrolled || $store.app.mobileOpen ? 'text-primary-500' : 'text-muted-800 dark:text-white'
+      ]"></span>
+    <span class="block absolute w-7 h-0.5 bg-current transition duration-500 ease-in-out" :class="[
+        $store.app.mobileOpen ? '-rotate-45' : 'translate-y-2',
+        scrolled || $store.app.mobileOpen ? 'text-primary-500' : 'text-muted-800 dark:text-white'
+      ]"></span>
+  </div>
+</button>
+			</div>
+		</div>
+		<!-- Right -->
+		<div class="flex-col items-center lg:justify-end gap-x-6" :class="$store.app.mobileOpen ? 'absolute top-[80px] left-0 w-full flex text-center px-6 pt-2 pb-6 border-t border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/40 dark:shadow-muted-900/50' : 'hidden lg:flex lg:flex-row'">
+			<div class="flex flex-col lg:flex-row items-center gap-x-6">
+				<div class="relative py-3 lg:py-5 after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:h-[3px] after:rounded-t-full after:transition-all after:duration-300 transition-colors duration-300" :class="activeStep === 'spy-1' ? 'text-primary-500 after:bg-primary-500 after:w-full' : 'text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0'">
+					<a class="no-underline text-inherit" href="/homepage/#home">Home</a>
+				</div>
+				<div class="relative py-3 lg:py-5 after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:h-[3px] after:rounded-t-full after:transition-all after:duration-300 transition-colors duration-300" :class="activeStep === 'spy-2' ? 'text-primary-500 after:bg-primary-500 after:w-full' : 'text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0'">
+					<a class="no-underline text-inherit" href="/homepage/#product">服务</a>
+				</div>
+				<div class="relative py-3 lg:py-5 after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:h-[3px] after:rounded-t-full after:transition-all after:duration-300 transition-colors duration-300" :class="activeStep === 'spy-3' ? 'text-primary-500 after:bg-primary-500 after:w-full' : 'text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0'">
+					<a class="no-underline text-inherit" href="/homepage/#pricing">定价</a>
+				</div>
+				<div class="relative py-3 lg:py-5 transition-colors duration-300 text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0">
+					<a class="no-underline text-inherit" href="/homepage/contents/0-关于/introduction">文档</a>
+				</div>
+				<div class="relative py-3 lg:py-5 text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 transition-colors duration-300">
+					<a class="no-underline text-inherit" href="/homepage/products/signIn/">登录</a>
+				</div>
+			</div>
+			<!---end -->
+			<div class="hidden lg:flex lg:w-1/8 lg:justify-end lg:gap-x-0">
+				<button type="button" class="group h-12 w-12 rounded-full flex items-center justify-center tw-accessibility bg-transparent" @click="openSearch()">
+					<div class="h-10 w-10 flex items-center justify-center rounded-full text-muted-400 group-hover:text-muted-500 group-hover:bg-muted-100 dark:group-hover:bg-muted-700 dark:group-hover:text-muted-100 transition-colors duration-300">
+						<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:search" class="iconify w-4 h-4 iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21l-4.35-4.35"></path></g></svg>
+					</div>
+				</button>
+				<div class="h-12 w-12 flex items-center justify-center">
+					<!--Dark mode-->
+					<div class="py-3 lg:py-5">
+						<label x-cloak class="block w-9 h-9 overflow-hidden relative mx-auto lg:m-0 rounded-full focus-visible:tw-accessibility-static">
+  <input type="checkbox" class="absolute top-0 left-0 z-[2] w-full h-full opacity-0 cursor-pointer" @change="toggleTheme()">
+  <span class="block relative w-9 h-9 bg-white dark:bg-muted-800 rounded-full border border-muted-300 dark:border-muted-700">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none" :class="[
+        !$store.app.isDark
+          ? 'opacity-100 -translate-x-[50%] -translate-y-1/2'
+          : 'opacity-0  -translate-x-[50%] -translate-y-[150%]',
+      ]" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" class="fill-current"></circle>
+        <path class="fill-current" d="M12 1v2"></path>
+        <path class="fill-current" d="M12 21v2"></path>
+        <path class="fill-current" d="M4.22 4.22l1.42 1.42"></path>
+        <path class="fill-current" d="M18.36 18.36l1.42 1.42"></path>
+        <path class="fill-current" d="M1 12h2"></path>
+        <path class="fill-current" d="M21 12h2"></path>
+        <path class="fill-current" d="M4.22 19.78l1.42-1.42"></path>
+        <path class="fill-current" d="M18.36 5.64l1.42-1.42"></path>
+      </g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none" :class="[
+        !$store.app.isDark
+          ? 'opacity-0 -translate-x-[45%] -translate-y-[150%]'
+          : 'opacity-100 -translate-x-[45%] -translate-y-1/2',
+      ]" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path class="fill-current" d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path>
+      </g>
+    </svg>
+  </span>
+</label>
+					</div>
+				</div>
+				<div class="w-full md:w-auto">
+					<a href="/homepage/products/signUp/" class="relative font-sans font-normal inline-flex items-center justify-center leading-5 no-underline space-x-1 text-white bg-primary-600 h-12 px-5 py-3 text-sm rounded-xl hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/20 tw-accessibility transition-all duration-300" :class="'w-full md:w-[240px] lg:w-[110px]'">
+  
+						注 册
+					
+</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+    <!--Site search-->
+    <div x-data="search()" x-cloak class="
+        fixed
+        w-screen
+        ease-in-out
+        flex flex-col
+        lg:flex-row lg:items-center
+        flex-shrink-0
+        px-5
+        bg-white
+        dark:bg-muted-800
+        border-b border-muted-200
+        dark:border-muted-700
+        transition-all
+        duration-300
+        z-[90]
+		-translate-y-full
+      " :class="$store.app.searchOpened ? 'translate-y-0' : '-translate-y-full'">
+      <div class="w-full max-w-7xl mx-auto flex items-center justify-between py-3">
+        <!--Logo-->
+        <div class="w-full lg:w-auto flex items-center gap-6">
+			<a href="/homepage/" class="no-underline text-inherit flex items-center gap-3">
+				<div class="transition-all duration-300 text-primary-600">
+					<svg class="fill-current" :class="'w-7 h-7'" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M395.631 98.837C358.783 45.867 309.195 16.696 256 16.696S153.217 45.867 116.369 98.837c-35.565 51.124-55.151 118.797-55.151 190.554 0 113.54 87.379 205.913 194.783 205.913s194.783-92.373 194.783-205.913c-.001-71.756-19.588-139.43-55.153-190.554z" style="" fill="#ffc170" class=""></path><path d="M256 495.304c107.403 0 194.783-92.373 194.783-205.913 0-71.757-19.586-139.43-55.151-190.554C358.783 45.867 309.195 16.696 256 16.696" style="" fill="#e1a05a" data-original="#ffd6a0" class=""></path><path d="M0 128h55.652v33.391H0z" style="" fill="#a0bdd4" class=""></path><path d="M13.053 51.94h55.65v33.391h-55.65z" style="" transform="rotate(-160.527 40.878 68.636)" fill="#a0bdd4" class=""></path><path d="M456.348 128H512v33.391h-55.652z" style="" fill="#a0bdd4" class=""></path><path d="M454.411 40.807h33.391v55.65h-33.391z" style="" transform="rotate(-109.469 471.111 68.636)" fill="#a0bdd4" class=""></path><path d="m187.719 277.315 14.949-29.896-47.598-21.154-93.659 51.085c-.124 4-.194 8.013-.194 12.041 0 8.564.505 17.005 1.471 25.298l93.892-51.214 31.139 13.84zM450.63 278.997l-105.587-52.794-89.463 44.731-22.369-9.942-14.948 29.896 38.155 16.958 88.625-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228c.001-3.476-.059-6.938-.152-10.394z" style="" fill="#f8f8f8" class=""></path><path d="m450.63 278.997-105.587-52.794-89.463 44.731.839 36.913 88.624-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228 382.07 382.07 0 0 0-.152-10.395z" style="" fill="#fef5ea" class=""></path></g></svg>
+				</div>
+				<span class="font-sans font-extrabold text-lg tracking-widest uppercase feat dark:text-muted-100">PKMer</span>
+			</a>
+
+		</div>
+        <!--Search-->
+        <div class="w-full max-w-xl mx-auto py-3">
+          <div class="group relative w-full rounded-md shadow-sm">
+            <input id="navbar-search-field" x-model="searchTerms" class="
+                w-full
+                h-10
+                bg-muted-100
+                dark:bg-muted-800
+                rounded-lg
+                border border-muted-200
+                dark:border-muted-700
+                focus:bg-white
+                dark:focus:bg-muted-900
+                focus:shadow-xl focus:shadow-muted-400/10
+                dark:focus:shadow-muted-800/10
+                placeholder:text-muted-300
+                dark:placeholder:text-muted-500
+                text-base text-muted-600
+                dark:text-muted-200
+                pl-10
+                pr-4
+                py-2
+                transition-all
+                duration-300
+                tw-accessibility
+              " placeholder="Search for anything..." type="text">
+            <button type="button" class="
+                absolute
+                top-0
+                left-0
+                h-10
+                w-10
+                flex
+                justify-center
+                items-center
+                text-muted-400
+                group-focus-within:text-primary-500
+                transition-colors
+                duration-300
+                cursor-pointer
+              ">
+              <i class="iconify w-4 h-4" data-icon="lucide:search"></i>
+            </button>
+            <!--Empty button-->
+            <button class="
+                absolute
+                top-0
+                right-0
+                h-10
+                w-10
+                flex
+                justify-center
+                items-center
+                text-muted-400
+                hover:text-muted-700
+                dark:hover:text-muted-100
+                transition-colors
+                duration-300
+                cursor-pointer
+              " :class="searchTerms === '' ? 'hidden' : 'block'" @click="searchTerms = ''">
+              <i class="iconify w-4 h-4" data-icon="lucide:x"></i>
+            </button>
+          </div>
+        </div>
+        <!--Dismiss-->
+        <div>
+          <button type="button" class="
+              font-sans font-semibold
+              text-sm text-muted-400
+              hover:text-primary-500
+              transition-colors
+              duration-300
+            " @click="toggleSearch()">
+            Close search
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body slot -->
+    <div id="home" x-intersect="activeStep = ''" class="min-h-screen w-full overflow-hidden bg-white dark:bg-muted-1000/40">
+	<div class="min-h-screen w-full max-w-7xl mx-auto flex items-center px-4">
+		<div class="w-full grid grid-cols-12">
+			<div class="col-span-12 ltablet:col-span-5 lg:col-span-5">
+				<div class="h-full ptablet:max-w-lg ptablet:mx-auto flex justify-center items-center mb-8 ltablet:mb-0 justify-cente lg:mb-0 py-8 ">
+					<div class="text-center ltablet:text-left lg:text-left font-sans space-y-4 -mt-8 ">
+						<h1 class="font-medium text-4xl ptablet:text-5xl lg:text-5xl text-muted-800 dark:text-white">
+            <span class="text_bg text_bg-1" style="--content:'A second brain blood,';--padding:0em;--start-color:#43d3ff;--end-color:#baaaff "><span class="text_foreground text_foreground-1">A second brain blood,</span></span><span class="text_bg text_bg-2" style="--content:'for you,';--padding:0em;--start-color:#7928CA;--end-color:rgb(79 70 229)"><span class="text_foreground text_foreground-2">for you,</span></span><span class="text_bg text_bg-3" style="--content:'forever.';--padding:0em;--start-color:#FF4D4D;--end-color:#F9CB28"><span class="text_foreground text_foreground-3">forever.</span></span>
+						</h1>
+						<p class="text-lg text-muted-500 dark:text-muted-400">打造东半球强大的知识管理社区</p>
+						<div class="w-full flex items-center justify-center ltablet:justify-start lg:justify-start gap-2">
+							<a href="/homepage/" class="relative font-sans font-normal inline-flex items-center justify-center leading-5 no-underline space-x-1 text-white bg-primary-600 h-12 px-5 py-3 text-sm rounded-xl hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/20 tw-accessibility transition-all duration-300" :class="'min-w-[130px]'">
+  Get Started
+</a>
+							<a href="/homepage/#fans" class="relative font-sans font-normal inline-flex items-center justify-center gap-x-1 rounded-xl leading-5 no-underline text-slate-700 bg-white border dark:text-white dark:bg-slate-700 dark:border-slate-600 h-12 px-5 py-3 text-sm hover:enabled:bg-slate-50 dark:hover:enabled:bg-slate-600 active:enabled:bg-slate-200 dark:active:enabled:bg-slate-700 tw-accessibility transition-all duration-300" :class="'min-w-[130px]'">
+  Explore
+</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="relative col-span-12 ltablet:col-span-7 lg:col-span-7">
+				<img src="./img/illustrations/home.png" class="block dark:hidden w-full ltablet:max-w-[540px] max-w-[620px] mx-auto" alt="Hero image">
+				<img src="./img/illustrations/home.png" class="hidden dark:block w-full ltablet:max-w-[540px] max-w-[620px] mx-auto" alt="Hero image">
+        <!-- Decoration -->
+        <div class="absolute bottom-40 left-32 h-10 w-10 hidden md:flex items-center justify-center rounded-full text-4xl ">
+        🌍
+        </div>
+        <div class="absolute top-24 left-24 h-10 w-10 hidden md:flex items-center justify-center rounded-full text-2xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50">
+        🔑
+        </div>
+        <div class="absolute bottom-60 right-24 h-16 w-16 hidden md:flex items-center justify-center rounded-full text-4xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50">
+        💡
+        </div>
+        <div class="absolute top-6 left-2/3 h-16 w-16 hidden ptablet:hidden md:flex items-center justify-center rounded-full text-4xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50">
+        🪐
+        </div>
+			</div>
+		</div>
+	</div>
+</div><section class="w-full py-16 px-4 bg-muted-100/80 dark:bg-muted-800/30" :class="'overflow-hidden'">
+  <div class="w-full max-w-7xl mx-auto">
+  <div class="w-full max-w-xl mb-14" :class="'mx-auto text-center'" id="product">
+  <h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">Product</h4>
+  <h2 class="font-sans text-4xl font-medium mb-4 text-muted-800 dark:text-muted-100">产 品</h2>
+  <p class="text-lg text-muted-500 dark:text-muted-400">将你的信息转化为智慧，通过我们开源的文档资源、繁荣的生态系统、个性化的服务和定制的解决方案，打造属于你的专属个人知识管理平台。</p>
+</div><div class="flex flex-col md:flex-row items-center py-6" x-intersect="activeStep = 'spy-2'">
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <!--Section content-->
+    <div class="w-full max-w-lg space-y-4 lg:pl-10">
+      <!--Badge-->
+      
+      <h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">  
+      WiKI
+      </h4>
+      <!--Title-->
+      <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white">
+       文档
+      </h2>
+      <!--Subtitle-->
+      <p class="font-sans text-lg text-muted-500 dark:text-muted-400">
+        开源共建最全面的知识管理文档，涵盖从工具到实践的知识手册
+      </p>
+      <ul class="pb-4 space-y-1 text-muted-400">
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">新手友好的小白教程</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">全面的知识管理内容</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">笔记软件使用技巧</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">完善实用的工作流介绍</span>
+        </li>
+      </ul>
+      <!--Link-->
+      <a href="#" class="group inline-flex items-center gap-4 text-primary-500 hover:text-primary-400 transition-colors duration-300">
+        <span class="font-sans font-medium text-sm">
+          Learn more about our suite
+        </span>
+        <i class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" data-icon="lucide:arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <div class="absolute -top-5 left-5 -z-10">
+      <div class="flex flex-wrap items-center gap-2 w-full max-w-[100px]" x-data="{}">
+  <template x-for="index in 72" :key="index">
+    <span class="block w-1 h-1 rounded-full bg-muted-300 dark:bg-muted-700"></span>
+  </template>
+</div>
+    </div>
+    <div class="absolute -bottom-5 right-4 -z-10">
+      <div class="flex flex-wrap items-center gap-2 w-full max-w-[100px]" x-data="{}">
+  <template x-for="index in 72" :key="index">
+    <span class="block w-1 h-1 rounded-full bg-muted-300 dark:bg-muted-700"></span>
+  </template>
+</div>
+    </div>
+    <!--Feature-->
+    <img class="w-4/5 rounded-xl shadow-md m-auto" src="./img/illustrations/post6.svg" alt="">
+    
+  </div>
+</div>
+
+<div class="flex flex-col-reverse md:flex-row items-center py-6">
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <div class="absolute -top-5 left-5 -z-10">
+      <div class="flex flex-wrap items-center gap-2 w-full max-w-[100px]" x-data="{}">
+  <template x-for="index in 72" :key="index">
+    <span class="block w-1 h-1 rounded-full bg-muted-300 dark:bg-muted-700"></span>
+  </template>
+</div>
+    </div>
+    <div class="absolute -bottom-5 right-4 -z-10">
+      <div class="flex flex-wrap items-center gap-2 w-full max-w-[100px]" x-data="{}">
+  <template x-for="index in 72" :key="index">
+    <span class="block w-1 h-1 rounded-full bg-muted-300 dark:bg-muted-700"></span>
+  </template>
+</div>
+    </div>
+    <!--Feature-->
+    <img class="w-4/5 rounded-xl shadow-md m-auto" src="./img/illustrations/post21.svg" alt="">
+  </div>
+
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <!--Section content-->
+    <div class="w-full max-w-lg space-y-4">
+      <!--Badge-->
+      <h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">Services</h4>
+      <!--Title-->
+      <h2 class="
+          font-heading font-medium
+          text-4xl text-muted-800
+          dark:text-white
+        ">
+      服务
+      </h2>
+      <!--Subtitle-->
+      <p class="font-sans text-lg text-muted-500 dark:text-muted-400">
+        解决笔记软件难题，开发维护优秀插件，赋能笔记软件
+      </p>
+      <ul class="pb-4 space-y-1 text-muted-400">
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">插件社区访问加速服务</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">插件众筹服务</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">插件开发服务</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">挂件美化服务</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">专属指导服务</span>
+        </li>
+      </ul>
+      <!--Link-->
+      <a href="#" class="
+          group
+          inline-flex
+          items-center
+          gap-4
+          text-primary-500
+          hover:text-primary-400
+          transition-colors
+          duration-300
+        ">
+        <span class="font-sans font-medium text-sm">
+          Learn more about our suite
+        </span>
+        <i class="
+            iconify
+            w-4
+            h-4
+            group-hover:translate-x-1
+            transition-transform
+            duration-300
+          " data-icon="lucide:arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div><div class="flex flex-col-reverse md:flex-row items-center py-6">
+  
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <!--Section content-->
+    <div class="w-full max-w-lg space-y-4 lg:pl-10">
+      <!--Badge-->
+      
+      <h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">  
+      Ecosphere
+      </h4>
+      <!--Title-->
+      <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white">
+       生态
+      </h2>
+      <!--Subtitle-->
+      <p class="font-sans text-lg text-muted-500 dark:text-muted-400">
+        构建开发者平台，解决知识管理难题，引导笔记生态良性发展
+      </p>
+      <ul class="pb-4 space-y-1 text-muted-400">
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">引导更多人参与共建知识系统</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">让软件潜能得到充分释放</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">打造开发者收益系统
+          </span>
+        </li>
+  
+      </ul>
+      <!--Link-->
+      <a href="#" class="group inline-flex items-center gap-4 text-primary-500 hover:text-primary-400 transition-colors duration-300">
+        <span class="font-sans font-medium text-sm">
+          Learn more about our suite
+        </span>
+        <i class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" data-icon="lucide:arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <!--Feature-->
+    <div class="absolute -top-5 left-5 -z-10">
+      <div class="flex flex-wrap items-center gap-2 w-full max-w-[100px]" x-data="{}">
+  <template x-for="index in 72" :key="index">
+    <span class="block w-1 h-1 rounded-full bg-muted-300 dark:bg-muted-700"></span>
+  </template>
+</div>
+    </div>
+    <div class="absolute -bottom-5 right-4 -z-10">
+      <div class="flex flex-wrap items-center gap-2 w-full max-w-[100px]" x-data="{}">
+  <template x-for="index in 72" :key="index">
+    <span class="block w-1 h-1 rounded-full bg-muted-300 dark:bg-muted-700"></span>
+  </template>
+</div>
+    </div>
+    <img class="w-4/5 rounded-xl shadow-md m-auto " src="./img/illustrations/post19.svg" alt="">
+  </div>
+</div>
+<div class="flex flex-col-reverse md:flex-row items-center py-6">
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <!--Feature-->
+    <div class="relative w-full max-w-sm mx-auto space-y-4">
+  <!--Background shape-->
+  <div class="absolute top-0 -left-10 ptablet:-left-32 h-[480px] w-[480px] rotate-45 mask mask-hexed bg-primary-100 dark:bg-primary-500/5 z-0">
+  </div>
+
+  <!--Item-->
+  <div class="relative -left-8 ptablet:-left-16 z-10 w-full p-5 rounded-xl bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10">
+    <div class="flex gap-4">
+      <img class="object-cover w-14 h-14 mask mask-blob" src="https://media.cssninja.io/shuriken/avatars/2.svg" alt="Avatar" width="56" height="56">
+      <div>
+        <h4 class="font-heading font-medium text-muted-800 dark:text-muted-100">
+          某某人
+        </h4>
+        <p class="font-sans text-xs text-muted-400 mb-2">12 minutes ago</p>
+        <p class="font-sans text-sm text-muted-500">
+          这是一个很棒的想法！我认为很多人都需要知识管理，但是很难入门。现在有了这个定制易用库，我想更多人会喜欢上知识管理。
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--Item-->
+  <div class="relative -right-8 ptablet:right-0 z-10 w-full p-5 rounded-xl bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10">
+    <div class="flex flex-row-reverse gap-4">
+      <img class="object-cover w-14 h-14 mask mask-blob" src="https://media.cssninja.io/shuriken/avatars/14.svg" alt="Avatar" width="56" height="56">
+      <div>
+        <h4 class="font-heading font-medium text-muted-800 dark:text-muted-100">
+         王老师
+        </h4>
+        <p class="font-sans text-xs text-muted-400 mb-2">8 minutes ago</p>
+        <p class="font-sans text-sm text-muted-500">
+          作为一个追求效率的人，我认为知识管理是很重要的。这个知识库很全面，让我能够更快捷地管理我的知识。谢谢！
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--Item-->
+  <div class="relative -left-8 ptablet:-left-16 z-10 w-full p-5 rounded-xl bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10">
+    <div class="flex gap-4">
+      <img class="object-cover w-14 h-14 mask mask-blob" src="https://media.cssninja.io/shuriken/avatars/12.svg" alt="Avatar" width="56" height="56">
+      <div>
+        <h4 class="font-heading font-medium text-muted-800 dark:text-muted-100">
+          周同学
+        </h4>
+        <p class="font-sans text-xs text-muted-400 mb-2">6 minutes ago</p>
+        <p class="font-sans text-sm text-muted-500">
+          作为一个新手，我一直在寻找一个好用的知识管理工具。感谢让我终于找到了一个适合我的工具，我很兴奋！
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <!--Column-->
+  <div class="w-full md:w-1/2 relative p-6">
+    <!--Section content-->
+    <div class="w-full max-w-lg space-y-4">
+      <!--Badge-->
+      <h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">Customisation</h4>
+      <!--Title-->
+      <h2 class="
+          font-heading font-medium
+          text-4xl text-muted-800
+          dark:text-white
+        ">
+      定制
+      </h2>
+      <!--Subtitle-->
+      <p class="font-sans text-lg text-muted-500 dark:text-muted-400">
+        定制易用库，提供美化挂件，降低使用门槛，让更多人享受知识管理带来的乐趣
+      </p>
+      <ul class="pb-4 space-y-1 text-muted-400">
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">定制易用库，覆盖学术，生活，手帐，计划等各个领域</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">定制个人专属插件，满足工作流个性化需求</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:check" class="iconify block mr-1 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+          <span class="font-sans text-sm">定制个人专属挂件，满足美化个性化需求</span>
+        </li>
+
+      </ul>
+      <!--Link-->
+      <a href="#" class="
+          group
+          inline-flex
+          items-center
+          gap-4
+          text-primary-500
+          hover:text-primary-400
+          transition-colors
+          duration-300
+        ">
+        <span class="font-sans font-medium text-sm">
+          Learn more about our suite
+        </span>
+        <i class="
+            iconify
+            w-4
+            h-4
+            group-hover:translate-x-1
+            transition-transform
+            duration-300
+          " data-icon="lucide:arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</section><section class="w-full py-16 px-4 bg-white dark:bg-muted-1000/30">
+  <div class="w-full max-w-7xl mx-auto">
+  <div class="w-full max-w-xl mb-14" :class="'mx-auto text-center'" id="pricing">
+  <h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">Simple Pricing</h4>
+  <h2 class="font-sans text-4xl font-medium mb-4 text-muted-800 dark:text-muted-100">定 价</h2>
+  <p class="text-lg text-muted-500 dark:text-muted-400">尽管我们很想免费分享关于知识管理的方法，教程，心得，但我们不得不负担巨大的人力成本和服务器成本。您可以选择参与社区贡献，通过积分换取需要的东西，也可以选择支持我们，我们将竭诚为您提供服务。</p>
+</div><div class="w-full max-w-6xl mx-auto" x-intersect="activeStep = 'spy-3'">
+  <div class="p-6 md:p-10 rounded-2xl bg-muted-200 dark:bg-muted-900">
+    <div class="grid md:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6">
+     
+      <!-- Pricing option -->
+      <div>
+        <div class="w-full rounded-xl px-6 md:px-8 pt-6 md:pt-8 pb-4 border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 transition-colors duration-300">
+          <div class="flex items-center -mt-2">
+            <div class="flex items-center justify-center h-12 w-12 border border-muted-200 dark:border-muted-700 rounded-full bg-white dark:bg-muted-800 mr-2">
+              <div class="flex items-center justify-center h-10 w-10 bg-rose-100 dark:bg-rose-100/10 rounded-full">
+                <i class="iconify w-5 h-5 text-rose-500" data-icon="iconoir:community"></i>
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-medium text-muted-800 dark:text-white">
+            社区成员
+            </h3>
+          </div>
+
+          <p class="font-sans text-sm py-2 mt-1 text-muted-500 dark:text-muted-400">
+          入门会员计划，帮助我们建立更多免费产品。
+          </p>
+          <div class="flex items-center mt-2 mb-4">
+            <h4 class="font-heading text-4xl font-semibold text-muted-800 dark:text-white mr-4">
+              永久免费
+            </h4>
+            <span class="font-sans text-xs text-muted-500 dark:text-muted-400">
+              <span></span>
+            </span>
+          </div>
+          <ul class="pb-4 space-y-1 text-muted-400">
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">独特成员标识</span>
+            </li>
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">免费文档</span>
+            </li>
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">参与贡献</span>
+            </li>
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">免费挂件</span>
+            </li>
+          </ul>
+          <a href="#" class="block w-full text-sm text-center font-sans my-2 py-4 font-medium text-primary-600 hover:text-muted-100 hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-500/30 rounded-lg border border-primary-600/25 transition-all duration-300">
+           立即注册
+          </a>
+          <a href="#" class="block w-full text-sm text-center font-sans mb-2 py-4 font-medium text-muted-500 hover:text-muted-600 dark:text-muted-300 dark:hover:text-muted-100 rounded-lg border border-solid border-transparent hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300">
+            Learn More
+          </a>
+        </div>
+      </div>
+      <!-- Pricing option -->
+      <div>
+        <div class="w-full rounded-xl px-6 md:px-8 pt-6 md:pt-8 pb-4 border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 transition-colors duration-300">
+          <div class="flex items-center -mt-2">
+            <div class="flex items-center justify-center h-12 w-12 border border-muted-200 dark:border-muted-700 rounded-full bg-white dark:bg-muted-800 mr-2">
+              <div class="flex items-center justify-center h-10 w-10 bg-primary-100 dark:bg-primary-100/10 rounded-full">
+                <i class="iconify w-5 h-5 text-primary-500" data-icon="wpf:paid"></i>
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-medium text-muted-800 dark:text-white">
+            社区支持者
+            </h3>
+          </div>
+
+          <p class="font-sans text-sm py-2 mt-1 text-muted-500 dark:text-muted-400">
+          社区支持者是对某个组织、产品或理念有兴趣并主动参与的人。
+          </p>
+          <div class="flex items-center mt-2 mb-4">
+            <h4 class="font-heading text-3xl font-semibold text-muted-800 dark:text-white mr-4">
+              ¥9.9
+            </h4>
+            <span class="font-sans text-xs text-muted-500 dark:text-muted-400">
+              <span>/月 </span>
+            </span>
+            <h4 class="font-heading text-3xl font-semibold text-muted-800 dark:text-white mx-4">
+            ¥99
+          </h4>
+          <span class="font-sans text-xs text-muted-500 dark:text-muted-400">
+            <span>/年</span>
+          </span>
+          </div>
+          <ul class="pb-4 space-y-1 text-muted-400">
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">社区成员全部权益</span>
+            </li>
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">插件社区访问加速服务</span>
+            </li>
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">付费挂件</span>
+            </li>
+            <li class="flex items-center">
+              <i class="iconify block mr-1" data-icon="lucide:check"></i>
+              <span class="font-sans text-sm">优先支持众筹插件</span>
+            </li>
+          </ul>
+          <a href="#" class="block w-full text-sm text-center font-sans my-2 py-4 font-medium text-primary-600 hover:text-muted-100 hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-500/30 rounded-lg border border-primary-600/25 transition-all duration-300">
+            立即付费
+          </a>
+          <a href="#" class="block w-full text-sm text-center font-sans mb-2 py-4 font-medium text-muted-500 hover:text-muted-600 dark:text-muted-300 dark:hover:text-muted-100 rounded-lg border border-solid border-transparent hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300">
+            Learn More
+          </a>
+        </div>
+      </div>
+           <!-- Pricing option -->
+           <div>
+            <div class="w-full rounded-xl px-6 md:px-8 pt-6 md:pt-8 pb-4 border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 transition-colors duration-300">
+              <div class="flex items-center -mt-2">
+                <div class="flex items-center justify-center h-12 w-12 border border-muted-200 dark:border-muted-700 rounded-full bg-white dark:bg-muted-800 mr-2">
+                  <div class="flex items-center justify-center h-10 w-10 bg-primary-100 dark:bg-primary-100/10 rounded-full">
+                    <i class="iconify w-5 h-5 text-primary-500" data-icon="mdi:donation"></i>
+                  </div>
+                </div>
+                <h3 class="font-heading text-2xl font-medium text-muted-800 dark:text-white">
+                社区捐赠
+                </h3>
+              </div>
+    
+              <p class="font-sans text-sm py-2 mt-1 text-muted-500 dark:text-muted-400">
+              社区支持者是对某个组织、产品或理念有兴趣并主动参与的人。
+              </p>
+              <div class="flex items-center mt-2 mb-4">
+                <h4 class="font-heading text-3xl font-semibold text-muted-800 dark:text-white mr-4">
+                &gt;512元
+                </h4>
+                <span class="font-sans text-xs text-muted-500 dark:text-muted-400">
+                  <span>/次</span>
+                </span>
+              </div>
+              <ul class="pb-4 space-y-1 text-muted-400">
+                <li class="flex items-center">
+                  <i class="iconify block mr-1" data-icon="lucide:check"></i>
+                  <span class="font-sans text-sm">社区支持者全部权益</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="iconify block mr-1" data-icon="lucide:check"></i>
+                  <span class="font-sans text-sm">内部讨论参与权</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="iconify block mr-1" data-icon="lucide:check"></i>
+                  <span class="font-sans text-sm">付费插件内测</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="iconify block mr-1" data-icon="lucide:check"></i>
+                  <span class="font-sans text-sm">捐赠者展示</span>
+                </li>
+              </ul>
+              <a href="#" class="block w-full text-sm text-center font-sans my-2 py-4 font-medium text-primary-600 hover:text-muted-100 hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-500/30 rounded-lg border border-primary-600/25 transition-all duration-300">
+                立即支持
+              </a>
+              <a href="#" class="block w-full text-sm text-center font-sans mb-2 py-4 font-medium text-muted-500 hover:text-muted-600 dark:text-muted-300 dark:hover:text-muted-100 rounded-lg border border-solid border-transparent hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300">
+                Learn More
+              </a>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+</div>
+</section><section class="w-full py-16 px-4 bg-muted-100/80 dark:bg-muted-800/30">
+  <div class="w-full max-w-7xl mx-auto">
+  <div class="w-full max-w-xl mb-14" :class="'mx-auto text-center'" id="fans">
+  <h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">Our Users</h4>
+  <h2 class="font-sans text-4xl font-medium mb-4 text-muted-800 dark:text-muted-100">They love PKM</h2>
+  <p class="text-lg text-muted-500 dark:text-muted-400">PKMER is a valuable tool for life-long learners to store and categorize new information.</p>
+</div><div x-cloak class="relative overflow-hidden" x-intersect="activeStep = ''">
+  <div x-data="swiper()" class="carousel-container">
+    <div class="carousel-controls flex items-center justify-end mb-4">
+      <button class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300" @click="swiper.slidePrev()">
+        <i class="iconify" data-icon="lucide:arrow-left"></i>
+      </button>
+
+      <button class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300" @click="swiper.slideNext()">
+        <i class="iconify" data-icon="lucide:arrow-right"></i>
+      </button>
+    </div>
+    <div class="swiper-container" x-ref="container">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300" :class="'p-6'">
+  <div class="w-full flex flex-col gap-8 font-sans">
+              <i class="iconify w-8 h-8 text-primary-600 dark:text-rose-500" data-icon="fa6-solid:quote-left"></i>
+              <p class="text-muted-500 dark:text-muted-300">
+                As a busy professional, I love using PKMER. It keeps me organized and helps me quickly access all the information I need to get my work done efficiently.
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <div class="shrink-0 inline-flex relative w-10 h-10">
+                  <img src="https://media.cssninja.io/shuriken/avatars/3.svg" class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm" alt="User image">
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">
+                    John Bingner
+                  </h4>
+                  <p class="text-xs text-muted-400">Los Angeles, CA</p>
+                </div>
+              </div>
+            </div>
+</div>
+        </div>
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300" :class="'p-6'">
+  <div class="w-full flex flex-col gap-8 font-sans">
+              <i class="iconify w-8 h-8 text-primary-600 dark:text-rose-500" data-icon="fa6-solid:quote-left"></i>
+              <p class="text-muted-500 dark:text-muted-300">
+                As a student, PKMER has been a game-changer for me. I used to struggle with keeping track of all the information I needed to learn, but now I can easily store and review it all in one place.
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <div class="shrink-0 inline-flex relative w-10 h-10">
+                  <img src="https://media.cssninja.io/shuriken/avatars/2.svg" class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm" alt="User image">
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">
+                    Maya Rosselini
+                  </h4>
+                  <p class="text-xs text-muted-400">Milano, IT</p>
+                </div>
+              </div>
+            </div>
+</div>
+        </div>
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300" :class="'p-6'">
+  <div class="w-full flex flex-col gap-8 font-sans">
+              <i class="iconify w-8 h-8 text-primary-600 dark:text-rose-500" data-icon="fa6-solid:quote-left"></i>
+              <p class="text-muted-500 dark:text-muted-300">
+                As an entrepreneur, PKMER has allowed me to stay on top of my game. I can quickly access all the information I need to make informed decisions, which has greatly impacted the success of my business.
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <div class="shrink-0 inline-flex relative w-10 h-10">
+                  <img src="https://media.cssninja.io/shuriken/avatars/10.svg" class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm" alt="User image">
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">
+                    Anna Galagher
+                  </h4>
+                  <p class="text-xs text-muted-400">New York, NY</p>
+                </div>
+              </div>
+            </div>
+</div>
+        </div>
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300" :class="'p-6'">
+  <div class="w-full flex flex-col gap-8 font-sans">
+              <i class="iconify w-8 h-8 text-primary-600 dark:text-rose-500" data-icon="fa6-solid:quote-left"></i>
+              <p class="text-muted-500 dark:text-muted-300">
+                As a retiree, PKMER has been a great tool for organizing all the information and knowledge I've accumulated over the years. I can now easily share my experiences and insights with my friends and family.
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <div class="shrink-0 inline-flex relative w-10 h-10">
+                  <img src="https://media.cssninja.io/shuriken/avatars/9.svg" class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm" alt="User image">
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">
+                    Maureen Stevens
+                  </h4>
+                  <p class="text-xs text-muted-400">San Diego, CA</p>
+                </div>
+              </div>
+            </div>
+</div>
+        </div>
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300" :class="'p-6'">
+  <div class="w-full flex flex-col gap-8 font-sans">
+              <i class="iconify w-8 h-8 text-primary-600 dark:text-rose-500" data-icon="fa6-solid:quote-left"></i>
+              <p class="text-muted-500 dark:text-muted-300">
+                As a researcher, PKMER has been an indispensable tool for me. I can easily store and categorize all my findings, and quickly access them whenever I need to reference them in my work.
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <div class="shrink-0 inline-flex relative w-10 h-10">
+                  <img src="https://media.cssninja.io/shuriken/avatars/11.svg" class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm" alt="User image">
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">
+                    Arthur Baxter
+                  </h4>
+                  <p class="text-xs text-muted-400">London, UK</p>
+                </div>
+              </div>
+            </div>
+</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300" :class="'p-6'">
+  <div class="w-full flex flex-col gap-8 font-sans">
+              <i class="iconify w-8 h-8 text-primary-600 dark:text-rose-500" data-icon="fa6-solid:quote-left"></i>
+              <p class="text-muted-500 dark:text-muted-300">
+                As a teacher, PKMER has been a valuable tool for me in the classroom. I can easily access and share information with my students, and keep track of their progress and learning.              </p>
+              <div class="w-full flex items-center gap-3">
+                <div class="shrink-0 inline-flex relative w-10 h-10">
+                  <img src="https://media.cssninja.io/shuriken/avatars/16.svg" class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm" alt="User image">
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">
+                    Matt Perret
+                  </h4>
+                  <p class="text-xs text-muted-400">Paris, FR</p>
+                </div>
+              </div>
+            </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+    <!-- Footer -->
+    <footer class="font-sans bg-white dark:bg-muted-900">
+  <div class="w-full max-w-7xl mx-auto">
+  <div class="px-5 py-24 mx-auto">
+      <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+        <div class="w-full mb-10 ltablet:mb-0 lg:mb-0 ltablet:w-2/6 lg:w-2/6 px-4">
+          <div class="max-w-[280px] mx-auto md:mx-0">
+            <a href="/homepage/" class="flex items-center justify-center md:justify-start gap-3 mb-4">
+              <div class="text-primary-600 transition-all duration-300">
+                <svg class="fill-current" :class="'w-9 h-9'" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M395.631 98.837C358.783 45.867 309.195 16.696 256 16.696S153.217 45.867 116.369 98.837c-35.565 51.124-55.151 118.797-55.151 190.554 0 113.54 87.379 205.913 194.783 205.913s194.783-92.373 194.783-205.913c-.001-71.756-19.588-139.43-55.153-190.554z" style="" fill="#ffc170" class=""></path><path d="M256 495.304c107.403 0 194.783-92.373 194.783-205.913 0-71.757-19.586-139.43-55.151-190.554C358.783 45.867 309.195 16.696 256 16.696" style="" fill="#e1a05a" data-original="#ffd6a0" class=""></path><path d="M0 128h55.652v33.391H0z" style="" fill="#a0bdd4" class=""></path><path d="M13.053 51.94h55.65v33.391h-55.65z" style="" transform="rotate(-160.527 40.878 68.636)" fill="#a0bdd4" class=""></path><path d="M456.348 128H512v33.391h-55.652z" style="" fill="#a0bdd4" class=""></path><path d="M454.411 40.807h33.391v55.65h-33.391z" style="" transform="rotate(-109.469 471.111 68.636)" fill="#a0bdd4" class=""></path><path d="m187.719 277.315 14.949-29.896-47.598-21.154-93.659 51.085c-.124 4-.194 8.013-.194 12.041 0 8.564.505 17.005 1.471 25.298l93.892-51.214 31.139 13.84zM450.63 278.997l-105.587-52.794-89.463 44.731-22.369-9.942-14.948 29.896 38.155 16.958 88.625-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228c.001-3.476-.059-6.938-.152-10.394z" style="" fill="#f8f8f8" class=""></path><path d="m450.63 278.997-105.587-52.794-89.463 44.731.839 36.913 88.624-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228 382.07 382.07 0 0 0-.152-10.395z" style="" fill="#fef5ea" class=""></path></g></svg>
+              </div>
+              <span class="font-sans text-lg tracking-widest uppercase text-muted-800 dark:text-muted-100">PKMer</span>
+            </a>
+            <p class="text-sm text-muted-500 dark:text-muted-400 mb-10 md:mb-0">
+              "PKMER -- Personal Knowledge Management (PKM) + "er"，其中 "er" 表示一个人，专门从事个人知识管理工作。因此， PKMER 可以被定义为专门从事个人知识管理工作的人员"
+            </p>
+          </div>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            RESOURCES
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">About</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            PLUGINS
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Plugins Store</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Categories</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            HELP
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Hotline</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Help Center</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">FAQs</a>
+            </li>
+  
+          </ul>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            DEVELOPERS
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">PKMer Community</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Documentation</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">API Reference</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+  <div class="border-t border-muted-200 dark:border-muted-800">
+    <div class="w-full max-w-7xl mx-auto">
+  <div class="px-5 py-8 flex flex-col md:flex-row mx-auto items-center">
+        <div class="w-full ltablet:w-auto lg:w-auto flex flex-col md:flex-row items-center justify-center md:justify-start gap-y-2">
+          <div class="relative w-full sm:w-64 md:w-40 sm:mr-4 mr-2">
+            <input type="text" class="w-full h-10 bg-muted-100 dark:bg-muted-700 bg-opacity-50 rounded-lg border border-muted-300 dark:border-muted-600 text-sm text-muted-700 py-1 px-3 leading-8 tw-accessibility transition-colors duration-300 ease-in-out" placeholder="Email Address">
+          </div>
+          <button class="w-full md:w-auto h-10 inline-flex items-center justify-center text-white bg-primary-600 border-0 py-2 px-6 focus:outline-none hover:bg-primary-700 rounded-lg">Subscribe</button>
+          <p class="text-muted-500 text-sm md:ml-2 md:mt-0 mt-2 sm:text-left text-center">
+            to our Newsletter
+          </p>
+        </div>
+        <span class="inline-flex ltablet:ml-auto lg:ml-auto md:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
+          <a class="text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:facebook-f"></i>
+          </a>
+          <a class="ml-3 text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:twitter"></i>
+          </a>
+          <a class="ml-3 text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:instagram"></i>
+          </a>
+          <a class="ml-3 text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:linkedin-in"></i>
+          </a>
+        </span>
+      </div>
+</div>
+  </div>
+
+  <div class="bg-muted-100 dark:bg-muted-800">
+    <div class="w-full max-w-7xl mx-auto">
+  <div class="py-4 px-5 flex flex-wrap flex-col justify-end sm:flex-row">
+        <p class="text-muted-500 dark:text-muted-400 text-sm text-center sm:text-left">
+          © 2022-2023 All Rights Reserved —PKMER
+         
+      </p>
+    </div>
+</div>
+</div></footer>
+
+    <!-- Main script -->
+    
+    <script type="text/javascript" color="255,255,255" opacity="1" zIndex="-2" count="100" src="/homepage/particleBg.js"></script>
+  </body>
+</html>

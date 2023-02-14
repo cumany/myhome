@@ -1,0 +1,1 @@
+body div:where(.astro-E2HZ2NHG).mobile-nav-menu{display:none}body.mobile-sidebar-toggle div:where(.astro-E2HZ2NHG).mobile-nav-menu{display:flex;flex-direction:column;align-items:center;width:100%;position:fixed;top:var(--theme-navbar-height);visibility:visible}body .main-section:where(.astro-E2HZ2NHG){position:fixed;top:var(--theme-navbar-height)}
