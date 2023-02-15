@@ -49,17 +49,7 @@ html {
 	Use a pseudo-element to add a gradient background that covers the entire viewport.
 	Using a regular fixed background does not work properly on mobile browsers like iOS Safari.
 */
-body::before {
-	content: '';
-	display: block;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: -999;
-	background: var(--theme-bg-gradient);
-}
+
 
 body {
 	color: var(--theme-text);
@@ -79,7 +69,9 @@ nav ul {
 	padding-inline-start: 2rem;
 }
 
-
+.sidebar nav h2 {
+    padding-left: 1em;
+}
 .content > section > * + *,
 .content > section > blockquote > * + *,
 .content > section > :is(ul, ol) > li > * + *,
@@ -297,6 +289,10 @@ a > code {
 	text-underline-offset: var(--padding-block);
 }
 
+#left-sidebar a:hover
+{
+	text-decoration: none;
+}
 a:hover,
 a:focus {
 	text-decoration: underline;
@@ -326,7 +322,7 @@ code {
 	font-family: var(--font-mono);
 	font-size: 0.85em;
 	color: var(--theme-code-inline-text);
-	background-color: var(--theme-code-inline-bg);
+	background-color: #0d1117;
 	padding: var(--padding-block) var(--padding-inline);
 	margin: calc(var(--padding-block) * -1) 0;
 	border-radius: var(--border-radius);
@@ -472,12 +468,9 @@ video {
 	margin-right: 0;
 }
 
-.flex {
-	display: flex;
-	align-items: center;
-}
 
-button {
+
+.layout button {
 	border: 0;
 	font-size: 1rem;
 	padding: 0.33em 0.67em;

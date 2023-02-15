@@ -1,50 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" x-data="theme()" :class="$store.app.isDark ? 'dark theme-dark' : ''" class="dark theme-dark astro-37FXCHFA">
-	<head>
-		<!-- Global Metadata --><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="theme-color" content="hsl(256, 44%, 15%)" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="hsl(273, 37%, 93%)" media="(prefers-color-scheme: light)">
-<meta name="generator" content="Astro v2.0.6">
-<link rel="icon" type="image/svg+xml" href="/myhome/img/favicon.svg">
-<link rel="sitemap" href="/myhome/sitemap-index.xml">
-
-<!-- Global CSS -->
-<link rel="stylesheet" href="/myhome/theme.css">
-<link rel="stylesheet" href="/myhome/index.css">
-
-<!-- Scrollable a11y code helper -->
-<script type="module">
-    Array.from(document.getElementsByTagName('pre')).forEach((element) => {
-	element.setAttribute('tabindex', '0');
-});
-</script>
-
-<!-- This is intentionally inlined to avoid FOUC -->
- 
-
-<!-- Double-click to highlight code blocks (inline only). -->
-
-
-<!-- Fathom - beautiful, simple website analytics -->
-<!-- <script src="https://certain-quality.astro.build/script.js" data-site="EZBHTSIG" defer></script> -->
-<link href="/myhome/pagefind/pagefind-ui.css" rel="stylesheet">
-<script src="/myhome/pagefind/pagefind-ui.js" type="text/javascript"></script>
-		<!-- <HeadSEO {content} {canonicalURL} /> -->
-		<title>知识管理基础 🚀 pkmer</title>
-		
-		<script>
-			// This code was migrated/copied from ThemToggleBotton to make the
-			// dark mode toggle instant, vs. hidden inside of a Preact useEffect() call.
-		</script>
-	<link rel="stylesheet" href="/myhome/_astro/404.1f773d2a.css" />
+<html lang="en" x-data="theme()" :class="$store.app.isDark ? 'dark theme-dark' : ''" class="dark theme-dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/svg+xml" href="/myhome/img/favicon.svg">
+    <meta name="generator" content="Astro v2.0.6">
+    <title>知识管理基础 🚀 pkmer</title>
+    <link rel="stylesheet" href="/myhome/theme.css">
+  <link rel="stylesheet" href="/myhome/_astro/404.f6b2216c.css" />
 <link rel="stylesheet" href="/myhome/_astro/introduction.6c57f5d1.css" />
-<link rel="stylesheet" href="/myhome/_astro/introduction.e2dc6185.css" />
-<link rel="stylesheet" href="/myhome/_astro/introduction.bbcb5eff.css" /><script type="module" src="/myhome/_astro/hoisted.24c4a3a6.js"></script></head>
+<link rel="stylesheet" href="/myhome/_astro/introduction.bbcb5eff.css" />
+<link rel="stylesheet" href="/myhome/_astro/introduction.b1c86799.css" /><script type="module" src="/myhome/_astro/hoisted.290a16c8.js"></script></head>
+  
+  <body x-data="homeSpy()" class="homebg">
 
-	<body x-data="homeSpy()" class="astro-37FXCHFA">
-		<div x-cloak x-data="navbar()" x-on:scroll.window="scroll()" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/30 dark:shadow-muted-900/40' : ''" x-on:mouseleave="megamenuOpened = false, openedMegamenu = ''" x-bind:class="{
+    <!-- Navbar -->
+    <div x-cloak x-data="navbar()" x-on:scroll.window="scroll()" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/30 dark:shadow-muted-900/40' : ''" x-on:mouseleave="megamenuOpened = false, openedMegamenu = ''" x-bind:class="{
 		'bg-white dark:bg-muted-800 shadow-lg shadow-muted-400/10 dark:shadow-muted-800/10': scrolled || megamenuOpened,
 		'': !scrolled || !megamenuOpened,
 		'bg-white dark:bg-muted-800': mobileOpen,
@@ -160,7 +132,7 @@
 				</div>
 
 				<div class="relative py-3 lg:py-5 text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 transition-colors duration-300">
-					<a class="no-underline text-inherit" href="/myhome/products/signIn/">登录</a>
+					<a class="no-underline hover:no-underline text-inherit" href="/myhome/products/signIn/">登录</a>
 				</div>
 			</div>
 
@@ -310,7 +282,7 @@
 					</div>
 				</div>
 				<div class="w-full md:w-auto">
-					<a href="/myhome/products/signUp/" class="relative font-sans font-normal inline-flex items-center justify-center leading-5 no-underline space-x-1 text-white bg-primary-600 h-12 px-5 py-3 text-sm rounded-xl hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/20 tw-accessibility transition-all duration-300" :class="'w-full md:w-[80px] lg:w-[110px] '">
+					<a href="/myhome/products/signUp/" class="relative font-sans font-normal inline-flex items-center justify-center leading-5 no-underline space-x-1 text-white bg-primary-600 h-12 px-5 py-3 text-sm rounded-xl hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/20 tw-accessibility transition-all duration-300" :class="'hover:no-underline w-full md:w-[80px] lg:w-[110px] '">
   
 						注 册
 					
@@ -353,11 +325,16 @@
 		</div>
 	</div>
 </div>
+
+    <!-- Body slot -->
+    <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}</script><script>(self.Astro=self.Astro||{}).media=(s,a)=>{const t=async()=>{await(await s())()};if(a.value){const e=matchMedia(a.value);e.matches?t():e.addEventListener("change",t,{once:!0})}},window.dispatchEvent(new Event("astro:media"));</script>
+
+
 		<main class="layout astro-37FXCHFA">
 			<aside id="left-sidebar" class="sidebar astro-37FXCHFA">
 						
 							<nav aria-label="站点导航" class="astro-KQNE5HRN">
-	<style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}</script><astro-island uid="Z1bBeYB" component-url="/myhome/_astro/SidebarToggleTabGroup.3d56fe87.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;defaultActiveTab&quot;:[0,&quot;learn&quot;],&quot;labels&quot;:[0,{&quot;learn&quot;:[0,&quot;学习&quot;],&quot;api&quot;:[0,&quot;参考&quot;]}],&quot;class&quot;:[0,&quot;astro-KQNE5HRN&quot;]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;SidebarToggleTabGroup&quot;,&quot;value&quot;:true}" await-children=""><div class="TabGroup"><button class="active">学习</button><button class>参考</button></div></astro-island>
+	<astro-island uid="Z1bBeYB" component-url="/myhome/_astro/SidebarToggleTabGroup.3d56fe87.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;defaultActiveTab&quot;:[0,&quot;learn&quot;],&quot;labels&quot;:[0,{&quot;learn&quot;:[0,&quot;学习&quot;],&quot;api&quot;:[0,&quot;参考&quot;]}],&quot;class&quot;:[0,&quot;astro-KQNE5HRN&quot;]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;SidebarToggleTabGroup&quot;,&quot;value&quot;:true}" await-children=""><div class="TabGroup"><button class="active">学习</button><button class>参考</button></div></astro-island>
 	<ul class="nav-groups astro-KQNE5HRN">
 		<li class="nav-group learn active astro-MSUTNKFE">
 			<details open class="astro-MSUTNKFE">
@@ -475,12 +452,12 @@
 						
 					</aside>
 			<aside id="right-sidebar" class="sidebar astro-37FXCHFA">
-						<script>(self.Astro=self.Astro||{}).media=(s,a)=>{const t=async()=>{await(await s())()};if(a.value){const e=matchMedia(a.value);e.matches?t():e.addEventListener("change",t,{once:!0})}},window.dispatchEvent(new Event("astro:media"));</script><nav class="astro-ROIVMLUZ">
+						<nav class="astro-ROIVMLUZ">
 	<astro-island uid="Z2jNLx4" component-url="/myhome/_astro/TableOfContents.e6943719.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;toc&quot;:[1,&quot;[[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;知识管理基础\&quot;],\&quot;text\&quot;:[0,\&quot;知识管理基础\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}]]&quot;],&quot;labels&quot;:[0,{&quot;onThisPage&quot;:[0,&quot;目录&quot;]}],&quot;isMobile&quot;:[0,false],&quot;class&quot;:[0,&quot;astro-ROIVMLUZ&quot;]}" ssr="" client="media" opts="{&quot;name&quot;:&quot;TableOfContents&quot;,&quot;value&quot;:&quot;(min-width: 50em)&quot;}" await-children=""><h2 class="heading" id="on-this-page-heading">目录</h2><ul class="toc-root"><li><a class="header-link depth-2 current-header-link" href="#知识管理基础">知识管理基础</a></li></ul></astro-island>
 </nav>
 					</aside>
 			<div id="main-content" class="main-column astro-37FXCHFA">
-				<div class="astro-J75B3YUS">
+				<link rel="stylesheet" href="/myhome/index.css"><div class="astro-J75B3YUS">
     <div class="fixed-mobile-bar astro-J75B3YUS">
 					<nav>
 						<astro-island uid="Z29pY4s" component-url="/myhome/_astro/TableOfContents.e6943719.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;toc&quot;:[1,&quot;[[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;回到顶部\&quot;],\&quot;text\&quot;:[0,\&quot;回到顶部\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}]]&quot;],&quot;labels&quot;:[0,{&quot;onThisPage&quot;:[0,&quot;目录&quot;]}],&quot;isMobile&quot;:[0,true]}" ssr="" client="media" opts="{&quot;name&quot;:&quot;TableOfContents&quot;,&quot;value&quot;:&quot;(max-width: 72em)&quot;}" await-children=""><details class="toc-mobile-container"><summary class="toc-mobile-header"><div class="toc-mobile-header-content"><div class="toc-toggle"><h2 class="heading" id="on-this-page-heading">目录</h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path></svg></div><span class="toc-current-heading">回到顶部</span></div></summary><ul class="toc-root"><li><a class="header-link depth-2 current-header-link" href="#回到顶部">回到顶部</a></li></ul></details></astro-island>
@@ -508,13 +485,134 @@
 			</div>
 			
 		</main>
-		<div class="main-column astro-37FXCHFA">
-			
-				<!-- <Footer /> -->
-			
-		</div>
-		
-		<script type="text/javascript" color="255,255,255" opacity="1" zIndex="-2" count="20" src="/myhome/particleBg.js"></script>
-	</body>
-	
+
+    <!-- Footer -->
+    <footer class="font-sans bg-white dark:bg-muted-900">
+  <div class="w-full max-w-7xl mx-auto">
+  <div class="px-5 py-24 mx-auto">
+      <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+        <div class="w-full mb-10 ltablet:mb-0 lg:mb-0 ltablet:w-2/6 lg:w-2/6 px-4">
+          <div class="max-w-[280px] mx-auto md:mx-0">
+            <a href="/myhome/" class="flex items-center justify-center md:justify-start gap-3 mb-4">
+              <div class="text-primary-600 transition-all duration-300">
+                <svg class="fill-current" :class="'w-9 h-9'" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M395.631 98.837C358.783 45.867 309.195 16.696 256 16.696S153.217 45.867 116.369 98.837c-35.565 51.124-55.151 118.797-55.151 190.554 0 113.54 87.379 205.913 194.783 205.913s194.783-92.373 194.783-205.913c-.001-71.756-19.588-139.43-55.153-190.554z" style="" fill="#ffc170" class=""></path><path d="M256 495.304c107.403 0 194.783-92.373 194.783-205.913 0-71.757-19.586-139.43-55.151-190.554C358.783 45.867 309.195 16.696 256 16.696" style="" fill="#e1a05a" data-original="#ffd6a0" class=""></path><path d="M0 128h55.652v33.391H0z" style="" fill="#a0bdd4" class=""></path><path d="M13.053 51.94h55.65v33.391h-55.65z" style="" transform="rotate(-160.527 40.878 68.636)" fill="#a0bdd4" class=""></path><path d="M456.348 128H512v33.391h-55.652z" style="" fill="#a0bdd4" class=""></path><path d="M454.411 40.807h33.391v55.65h-33.391z" style="" transform="rotate(-109.469 471.111 68.636)" fill="#a0bdd4" class=""></path><path d="m187.719 277.315 14.949-29.896-47.598-21.154-93.659 51.085c-.124 4-.194 8.013-.194 12.041 0 8.564.505 17.005 1.471 25.298l93.892-51.214 31.139 13.84zM450.63 278.997l-105.587-52.794-89.463 44.731-22.369-9.942-14.948 29.896 38.155 16.958 88.625-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228c.001-3.476-.059-6.938-.152-10.394z" style="" fill="#f8f8f8" class=""></path><path d="m450.63 278.997-105.587-52.794-89.463 44.731.839 36.913 88.624-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228 382.07 382.07 0 0 0-.152-10.395z" style="" fill="#fef5ea" class=""></path></g></svg>
+              </div>
+              <span class="font-sans text-lg tracking-widest uppercase text-muted-800 dark:text-muted-100">PKMer</span>
+            </a>
+            <p class="text-sm text-muted-500 dark:text-muted-400 mb-10 md:mb-0">
+              "PKMER -- Personal Knowledge Management (PKM) + "er"，其中 "er" 表示一个人，专门从事个人知识管理工作。因此， PKMER 可以被定义为专门从事个人知识管理工作的人员"
+            </p>
+          </div>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            RESOURCES
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">About</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            PLUGINS
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Plugins Store</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Categories</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            HELP
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Hotline</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Help Center</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">FAQs</a>
+            </li>
+  
+          </ul>
+        </div>
+        <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+          <h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+            DEVELOPERS
+          </h2>
+          <ul class="list-none space-y-3 mb-10">
+
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">PKMer Community</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">Documentation</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300">API Reference</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+  <div class="border-t border-muted-200 dark:border-muted-800">
+    <div class="w-full max-w-7xl mx-auto">
+  <div class="px-5 py-8 flex flex-col md:flex-row mx-auto items-center">
+        <div class="w-full ltablet:w-auto lg:w-auto flex flex-col md:flex-row items-center justify-center md:justify-start gap-y-2">
+          <div class="relative w-full sm:w-64 md:w-40 sm:mr-4 mr-2">
+            <input type="text" class="w-full h-10 bg-muted-100 dark:bg-muted-700 bg-opacity-50 rounded-lg border border-muted-300 dark:border-muted-600 text-sm text-muted-700 py-1 px-3 leading-8 tw-accessibility transition-colors duration-300 ease-in-out" placeholder="Email Address">
+          </div>
+          <button class="w-full md:w-auto h-10 inline-flex items-center justify-center text-white bg-primary-600 border-0 py-2 px-6 focus:outline-none hover:bg-primary-700 rounded-lg">Subscribe</button>
+          <p class="text-muted-500 text-sm md:ml-2 md:mt-0 mt-2 sm:text-left text-center">
+            to our Newsletter
+          </p>
+        </div>
+        <span class="inline-flex ltablet:ml-auto lg:ml-auto md:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
+          <a class="text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:facebook-f"></i>
+          </a>
+          <a class="ml-3 text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:twitter"></i>
+          </a>
+          <a class="ml-3 text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:instagram"></i>
+          </a>
+          <a class="ml-3 text-muted-500">
+            <i class="iconify w-5 h-5" data-icon="fa6-brands:linkedin-in"></i>
+          </a>
+        </span>
+      </div>
+</div>
+  </div>
+
+  <div class="bg-muted-100 dark:bg-muted-800">
+    <div class="w-full max-w-7xl mx-auto">
+  <div class="py-4 px-5 flex flex-wrap flex-col justify-end sm:flex-row">
+        <p class="text-muted-500 dark:text-muted-400 text-sm text-center sm:text-left">
+          © 2022-2023 All Rights Reserved —PKMER
+         
+      </p>
+    </div>
+</div>
+</div></footer>
+
+    <!-- Main script -->
+    
+    <script type="text/javascript" color="255,255,255" opacity="1" zIndex="-2" count="100" src="/myhome/particleBg.js"></script>
+    <link href="/myhome/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/myhome/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+  </body>
 </html>
