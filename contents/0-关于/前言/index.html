@@ -38,17 +38,22 @@
 			// This code was migrated/copied from ThemToggleBotton to make the
 			// dark mode toggle instant, vs. hidden inside of a Preact useEffect() call.
 		</script>
-	<link rel="stylesheet" href="/myhome/_astro/404.94d139d0.css" />
+	<link rel="stylesheet" href="/myhome/_astro/404.1f773d2a.css" />
 <link rel="stylesheet" href="/myhome/_astro/introduction.6c57f5d1.css" />
 <link rel="stylesheet" href="/myhome/_astro/introduction.e2dc6185.css" />
-<link rel="stylesheet" href="/myhome/_astro/introduction.a9bb7c1c.css" /><script type="module" src="/myhome/_astro/hoisted.6dbca796.js"></script></head>
+<link rel="stylesheet" href="/myhome/_astro/introduction.bbcb5eff.css" /><script type="module" src="/myhome/_astro/hoisted.24c4a3a6.js"></script></head>
 
 	<body x-data="homeSpy()" class="astro-37FXCHFA">
-		<div x-cloak x-data="navbar()" x-on:scroll.window="scroll()" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/30 dark:shadow-muted-900/40' : ''">
+		<div x-cloak x-data="navbar()" x-on:scroll.window="scroll()" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/30 dark:shadow-muted-900/40' : ''" x-on:mouseleave="megamenuOpened = false, openedMegamenu = ''" x-bind:class="{
+		'bg-white dark:bg-muted-800 shadow-lg shadow-muted-400/10 dark:shadow-muted-800/10': scrolled || megamenuOpened,
+		'': !scrolled || !megamenuOpened,
+		'bg-white dark:bg-muted-800': mobileOpen,
+		'': !mobileOpen
+	}">
 	<div class="w-full max-w-7xl mx-auto flex items-center justify-between pl-4 pr-0 lg:pr-4 font-sans">
 		<!-- Left -->
 		<div class="w-full lg:w-auto flex items-center gap-6">
-			<a href="/myhome/" class="no-underline text-inherit flex items-center gap-3">
+			<a href="/myhome/" class="no-underline hover:no-underline text-inherit flex items-center gap-3">
 				<div class="transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'text-rose-500 rotate-180' : 'text-primary-600'">
 					<svg class="fill-current" :class="'w-7 h-7'" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M395.631 98.837C358.783 45.867 309.195 16.696 256 16.696S153.217 45.867 116.369 98.837c-35.565 51.124-55.151 118.797-55.151 190.554 0 113.54 87.379 205.913 194.783 205.913s194.783-92.373 194.783-205.913c-.001-71.756-19.588-139.43-55.153-190.554z" style="" fill="#ffc170" class=""></path><path d="M256 495.304c107.403 0 194.783-92.373 194.783-205.913 0-71.757-19.586-139.43-55.151-190.554C358.783 45.867 309.195 16.696 256 16.696" style="" fill="#e1a05a" data-original="#ffd6a0" class=""></path><path d="M0 128h55.652v33.391H0z" style="" fill="#a0bdd4" class=""></path><path d="M13.053 51.94h55.65v33.391h-55.65z" style="" transform="rotate(-160.527 40.878 68.636)" fill="#a0bdd4" class=""></path><path d="M456.348 128H512v33.391h-55.652z" style="" fill="#a0bdd4" class=""></path><path d="M454.411 40.807h33.391v55.65h-33.391z" style="" transform="rotate(-109.469 471.111 68.636)" fill="#a0bdd4" class=""></path><path d="m187.719 277.315 14.949-29.896-47.598-21.154-93.659 51.085c-.124 4-.194 8.013-.194 12.041 0 8.564.505 17.005 1.471 25.298l93.892-51.214 31.139 13.84zM450.63 278.997l-105.587-52.794-89.463 44.731-22.369-9.942-14.948 29.896 38.155 16.958 88.625-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228c.001-3.476-.059-6.938-.152-10.394z" style="" fill="#f8f8f8" class=""></path><path d="m450.63 278.997-105.587-52.794-89.463 44.731.839 36.913 88.624-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228 382.07 382.07 0 0 0-.152-10.395z" style="" fill="#fef5ea" class=""></path></g></svg>
 				</div>
@@ -78,24 +83,89 @@
 		<div class="flex-col items-center lg:justify-end gap-x-6" :class="$store.app.mobileOpen ? 'absolute top-[80px] left-0 w-full flex text-center px-6 pt-2 pb-6 border-t border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/40 dark:shadow-muted-900/50' : 'hidden lg:flex lg:flex-row'">
 			<div class="flex flex-col lg:flex-row items-center gap-x-6">
 				<div class="relative py-3 lg:py-5 after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:h-[3px] after:rounded-t-full after:transition-all after:duration-300 transition-colors duration-300" :class="activeStep === 'spy-1' ? 'text-primary-500 after:bg-primary-500 after:w-full' : 'text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0'">
-					<a class="no-underline text-inherit" href="/myhome/#home">Home</a>
+					<a class="no-underline hover:no-underline text-inherit" href="/myhome/#home">Home</a>
 				</div>
 				<div class="relative py-3 lg:py-5 after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:h-[3px] after:rounded-t-full after:transition-all after:duration-300 transition-colors duration-300" :class="activeStep === 'spy-2' ? 'text-primary-500 after:bg-primary-500 after:w-full' : 'text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0'">
-					<a class="no-underline text-inherit" href="/myhome/#product">服务</a>
+					<a class="no-underline hover:no-underline text-inherit" href="/myhome/#product">服务</a>
 				</div>
 				<div class="relative py-3 lg:py-5 after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:h-[3px] after:rounded-t-full after:transition-all after:duration-300 transition-colors duration-300" :class="activeStep === 'spy-3' ? 'text-primary-500 after:bg-primary-500 after:w-full' : 'text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0'">
-					<a class="no-underline text-inherit" href="/myhome/#pricing">定价</a>
+					<a class="no-underline hover:no-underline text-inherit" href="/myhome/#pricing">定价</a>
 				</div>
 				<div class="relative py-3 lg:py-5 transition-colors duration-300 text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 after:w-0">
-					<a class="no-underline text-inherit" href="/myhome/contents/0-关于/introduction">文档</a>
+					<a class="no-underline hover:no-underline text-inherit" href="/myhome/contents/0-关于/introduction">文档</a>
 				</div>
+				<div class="relative" x-on:mouseover="megamenuOpened = true, openedMegamenu = 'megamenu-2'">
+					<button type="button" class="bg-transparent relative inline-flex items-center gap-1 text-base font-sans text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 py-2 md:mx-2 tw-accessibility z-50" :class="megamenuOpened ? 'z-40' : 'z-50'">
+						<span>产品</span>
+						<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" :class="openedMegamenu === 'megamenu-2' && megamenuOpened ? 'rotate-180' : ''" data-icon="lucide:chevron-down" class="iconify w-5 h-5 text-muted-400 dark:text-muted-300 transition-transform duration-300 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path></svg>
+					</button>
+					<!--Megamenu-->
+					<div class="fixed lg:absolute top-0 lg:top-12 inset-x-0 lg:left-0 w-full lg:w-[320px] pt-2 lg:-translate-x-1/4 transition-all duration-300 opacity-0 translate-y-1 pointer-events-none z-0" x-bind:class="{
+						'opacity-100 translate-y-0 z-50': openedMegamenu === 'megamenu-2',
+						'opacity-0 translate-y-1 pointer-events-none z-0': openedMegamenu !== 'megamenu-2',
+					  }">
+						<div class="relative w-full min-h-[50vh] lg:min-h-fit px-3 pb-3 pt-12 lg:p-3 rounded-2xl bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-2xl shadow-muted-500/20 dark:shadow-muted-800/20">
+							<!--Close button-->
+							<button type="button" class="bg-transparent absolute top-2 right-2 h-12 w-12 flex lg:hidden items-center justify-center text-muted-600 dark:text-muted-200" @click="megamenuOpened = false, openedMegamenu = ''">
+								<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:x" class="iconify w-6 h-6 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"></path></svg>
+							</button>
+
+							<!--Grid-->
+							<div class="grid gap-1 text-left">
+								<!--Grid item-->
+								<a href="/widget.html" class="no-underline hover:no-underline relative flex gap-2 p-4 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-900 z-10 transition-colors duration-300">
+									<div class="relative inline-flex items-center justify-center w-10 min-w-[2.5rem] h-10 bg-violet-100 dark:bg-violet-500 text-violet-500 dark:text-white mask mask-hexed">
+										<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 256 256" data-icon="ph:gift-duotone" class="iconify w-5 h-5 iconify--ph"><path fill="currentColor" d="M216 72h-35a32 32 0 0 0-47.3-42.9a29.2 29.2 0 0 0-5.7 8.2a29.2 29.2 0 0 0-5.7-8.2A32 32 0 0 0 75 72H40a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16v64a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16v-64a16 16 0 0 0 16-16V88a16 16 0 0 0-16-16Zm-71-31.6A16 16 0 1 1 167.6 63c-4.9 5-19.2 7.7-31.3 8.7c1-12.1 3.7-26.4 8.7-31.3Zm-56.6 0a16.1 16.1 0 0 1 22.6 0c5 4.9 7.7 19.2 8.7 31.3c-12.1-1-26.4-3.7-31.3-8.7a16.1 16.1 0 0 1 0-22.6ZM40 88h80v32H40Zm16 48h64v64H56Zm144 64h-64v-64h64Zm16-80h-80V88h80v32Z"></path><path fill="currentColor" d="M208 128v72a8 8 0 0 1-8 8H56a8 8 0 0 1-8-8v-72Z" opacity=".2"></path></svg>
+									</div>
+									<div>
+										<h4 class="mb-0 font-heading font-semibold text-sm text-muted-800 dark:text-white">
+											挂件集市
+										</h4>
+										<p class="font-sans text-xs text-muted-500 dark:text-muted-400">
+											提供各类挂件，丰富你的笔记
+										</p>
+									</div>
+								</a>
+								<!--Grid item-->
+								<a href="/plugins.html" class="no-underline hover:no-underline relative flex gap-2 p-4 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-900 z-10 transition-colors duration-300">
+									<div class="relative inline-flex items-center justify-center w-10 min-w-[2.5rem] h-10 bg-primary-100 dark:bg-primary-500 text-primary-500 dark:text-white mask mask-hexed">
+										<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 256 256" data-icon="ph:sparkle-duotone" class="iconify w-5 h-5 iconify--ph"><path fill="currentColor" d="m195.6 151.5l-52.1 19.2a8.1 8.1 0 0 0-4.8 4.8l-19.2 52.1a8 8 0 0 1-15 0l-19.2-52.1a8.1 8.1 0 0 0-4.8-4.8l-52.1-19.2a8 8 0 0 1 0-15l52.1-19.2a8.1 8.1 0 0 0 4.8-4.8l19.2-52.1a8 8 0 0 1 15 0l19.2 52.1a8.1 8.1 0 0 0 4.8 4.8l52.1 19.2a8 8 0 0 1 0 15Z" opacity=".2"></path><path fill="currentColor" d="m198.4 129l-52.2-19.2L127 57.6a16 16 0 0 0-30 0l-19.2 52.2L25.6 129a16 16 0 0 0 0 30l52.2 19.2L97 230.4a16 16 0 0 0 30 0l19.2-52.2l52.2-19.2a16 16 0 0 0 0-30Zm-57.7 34.2a15.9 15.9 0 0 0-9.5 9.5L112 224.9l-19.2-52.2a15.9 15.9 0 0 0-9.5-9.5L31.1 144l52.2-19.2a15.9 15.9 0 0 0 9.5-9.5L112 63.1l19.2 52.2a15.9 15.9 0 0 0 9.5 9.5l52.2 19.2ZM144 40a8 8 0 0 1 8-8h16V16a8 8 0 0 1 16 0v16h16a8 8 0 0 1 0 16h-16v16a8 8 0 0 1-16 0V48h-16a8 8 0 0 1-8-8Zm104 48a8 8 0 0 1-8 8h-8v8a8 8 0 0 1-16 0v-8h-8a8 8 0 0 1 0-16h8v-8a8 8 0 0 1 16 0v8h8a8 8 0 0 1 8 8Z"></path></svg>
+									</div>
+									<div>
+										<h4 class="mb-0 font-heading font-semibold text-sm text-muted-800 dark:text-white">
+											插件市场
+										</h4>
+										<p class="font-sans text-xs text-muted-500 dark:text-muted-400">
+											提供插件代理下载，分类，教程一站式服务。
+										</p>
+									</div>
+								</a>
+								<!--Grid item-->
+								<a href="/online.html" class="no-underline relative flex gap-2 p-4 rounded-xl hover:bg-muted-100 hover:no-underline dark:hover:bg-muted-900 z-10 transition-colors duration-300">
+									<div class="relative inline-flex items-center justify-center w-10 min-w-[2.5rem] h-10 bg-lime-100 dark:bg-lime-500 text-lime-500 dark:text-white mask mask-hexed">
+										<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 256 256" data-icon="ph:note-duotone" class="iconify w-5 h-5 iconify--ph"><path fill="currentColor" d="M216 160h-56v56l56-56z" opacity=".2"></path><path fill="currentColor" d="M96 104h64a8 8 0 0 0 0-16H96a8 8 0 0 0 0 16Zm0 32h64a8 8 0 0 0 0-16H96a8 8 0 0 0 0 16Zm32 16H96a8 8 0 0 0 0 16h32a8 8 0 0 0 0-16Z"></path><path fill="currentColor" d="M224 156.7V48a16 16 0 0 0-16-16H48a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h108.7a15.9 15.9 0 0 0 11.3-4.7l51.3-51.3a16.3 16.3 0 0 0 3.3-4.9h.1a17.4 17.4 0 0 0 1.3-6.4ZM48 48h160v104h-48a8 8 0 0 0-8 8v48H48Zm148.7 120L168 196.7V168Z"></path></svg>
+									</div>
+									<div>
+										<h4 class="mb-0 font-heading font-semibold text-sm text-muted-800 dark:text-white">
+											在线服务
+										</h4>
+										<p class="font-sans text-xs text-muted-500 dark:text-muted-400">
+											提供在线咨询服务
+										</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="relative py-3 lg:py-5 text-slate-500 dark:text-slate-400 hover:text-muted-700 dark:hover:text-muted-100 transition-colors duration-300">
 					<a class="no-underline text-inherit" href="/myhome/products/signIn/">登录</a>
 				</div>
 			</div>
+
 			<!---end -->
-			<div class="hidden lg:flex lg:w-1/8 lg:justify-end lg:gap-x-0">
-		
+			<div class="flex lg:flex lg:w-1/8 lg:justify-end lg:gap-x-0">
 				<button id="openSearch" type="button" class="group h-12 w-12 rounded-full flex items-center justify-center tw-accessibility bg-transparent" @click="openSearch()">
 	<div class="h-10 w-10 flex items-center justify-center rounded-full text-muted-400 group-hover:text-muted-500 group-hover:bg-muted-100 dark:group-hover:bg-muted-700 dark:group-hover:text-muted-100 transition-colors duration-300">
 		<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:search" class="iconify w-4 h-4 iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21l-4.35-4.35"></path></g></svg>
@@ -104,7 +174,7 @@
 
 <script>
 	window.addEventListener('DOMContentLoaded', (event) => {
-		new PagefindUI({ element: '#search', baseUrl: "/myhome",});
+		new PagefindUI({ element: '#search', baseUrl: '/myhome' });
 
 		// document.querySelector("#search").addEventListener('blur', ()=>{
 		//     document.body.classList.remove("search-active")
@@ -112,30 +182,36 @@
 		document.addEventListener('click', (e) => {
 			const searchEl = document.querySelector('#search');
 			const opensearchButtonEl = document.querySelector('#openSearch');
-            const searchButtonEl = document.querySelector('#seachbar');
-			if (!searchEl.contains(e.target) && !opensearchButtonEl.contains(e.target)&& !searchButtonEl.contains(e.target)) {
-                searchButtonEl.classList.add('-translate-y-full');
-                searchButtonEl.classList.remove('translate-y-0');
-                searchButtonEl.style.visibility = 'hidden';
+			const searchButtonEl = document.querySelector('#searchbar');
+			const clickClass = e.target.className.toString();
+			if (clickClass.includes('pagefind-ui__button')) {
+				return;
+			}
+			if (!searchEl.contains(e.target) && !opensearchButtonEl.contains(e.target)) {
+				searchButtonEl.classList.add('-translate-y-full');
+				searchButtonEl.classList.remove('translate-y-0');
+				searchButtonEl.style.visibility = 'hidden';
 			}
 		});
 
 		document.querySelector('body').addEventListener('keyup', (e) => {
 			if (e.code === 'Escape') {
-                const searchButtonEl = document.querySelector('#seachbar');
-                searchButtonEl.classList.add('-translate-y-full');
-                searchButtonEl.classList.remove('translate-y-0');
-                searchButtonEl.style.visibility = 'hidden';
+				const searchButtonEl = document.querySelector('#searchbar');
+				searchButtonEl.classList.add('-translate-y-full');
+				searchButtonEl.classList.remove('translate-y-0');
+				searchButtonEl.style.visibility = 'hidden';
 			}
 		});
 	});
 </script>
 <style>
-	[data-md-toggle='search']:checked ~ .md-header .md-search__overlay {
+	#searchbar .md-search__overlay {
 		height: 200vh;
+		z-index: -1;
 		opacity: 1;
 		transition: width 0ms, height 0ms, opacity 0.25s;
 		width: 100%;
+		margin-left: -1.25rem;
 	}
 	.md-search__overlay {
 		background-color: #0000008a;
@@ -147,54 +223,55 @@
 		width: 0;
 	}
 
-	#search .pagefind-ui__drawer {
-		position: absolute;
-		backface-visibility: hidden;
-		background-color: var(--pagefind-ui-background);
-		height: 100%;
-		width: 100%;
-		touch-action: pan-y;
-        
-	}
-	#search .pagefind-ui__results-area,
-    #search .pagefind-ui__button {
-		margin: auto;
-        border-radius: 0 0 8px 8px;
-	}
-    #search .pagefind-ui__message {
-    padding-left: 2rem;
+    #search .pagefind-ui__drawer {
+    overflow: auto;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: var(--pagefind-ui-background);
+    max-height: 80vh;
+    width: 100%;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
 }
+	#search .pagefind-ui__results-area,
+	#search .pagefind-ui__button {
+		margin: auto;
+		border-radius: 0 0 8px 8px;
+	}
+	#search .pagefind-ui__message {
+		padding-left: 2rem;
+	}
 	#search ol.pagefind-ui__results {
 		background-color: var(--pagefind-ui-background);
-        overflow-y: auto;
-       
-	}
-    #search ol.pagefind-ui__results li {
-        padding: 0.5rem 0;
-	}
-    #search .pagefind-ui__result-thumb:empty
-    {
-  
-    display: inline-block;
-    height: 100%;
-background-image: url("data:image/svg+xml,%3Csvg t='1676378865284' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='17930' width='48' height='48'%3E%3Cpath d='M542 835.6c-60.4 0-117.2-23.6-160-66.4-88-88-88-231.6 0-320 42.8-42.8 99.6-66.4 160-66.4 60.4 0 117.2 23.6 160 66.4 88 88.4 88 231.6 0 320-42.8 42.8-99.6 66.4-160 66.4z m0-440c-57.2 0-110.8 22.4-151.2 62.4-83.2 83.2-83.2 218.8 0 302 40.4 40.4 94 62.4 151.2 62.4 57.2 0 110.8-22.4 151.2-62.4 83.2-83.2 83.2-218.8 0-302-40.4-40.4-94-62.4-151.2-62.4z m0 368c-41.2 0-80-16-109.2-45.2-29.2-29.2-45.2-68-45.2-109.2s16-80 45.2-109.2c29.2-29.2 68-45.2 109.2-45.2s80 16 109.2 45.2c60.4 60.4 60.4 158.4 0 218.4-29.2 29.2-68 45.2-109.2 45.2z m0-296.4c-38 0-73.6 14.8-100.4 41.6-26.8 26.8-41.6 62.4-41.6 100.4 0 38 14.8 73.6 41.6 100.4 26.8 26.8 62.4 41.6 100.4 41.6s73.6-14.8 100.4-41.6c55.2-55.2 55.2-145.2 0-200.8-26.8-26.8-62.4-41.6-100.4-41.6z' fill='%234A555F' p-id='17931'%3E%3C/path%3E%3Cpath d='M542 808c-53.2 0-103.2-20.8-140.8-58.4-77.6-77.6-77.6-203.6 0-281.2 37.6-37.6 87.6-58.4 140.8-58.4 53.2 0 103.2 20.8 140.8 58.4 77.6 77.6 77.6 203.6 0 281.2-37.6 38-87.6 58.4-140.8 58.4z m0-368c-45.2 0-87.6 17.6-119.6 49.6S372.8 564 372.8 609.2c0 45.2 17.6 87.6 49.6 119.6s74.4 49.6 119.6 49.6c45.2 0 87.6-17.6 119.6-49.6 66-66 66-173.2 0-239.2-32-32-74.4-49.6-119.6-49.6z' fill='%23FFD552' p-id='17932'%3E%3C/path%3E%3Cpath d='M848.4 992.4l-155.6-155.6c-10.4-10.4-16-24-16-38.4 0-14.4 5.6-28 16-38.4 10.4-10.4 24-16 38.4-16 14.4 0 28 5.6 38.4 16l155.6 155.6-76.8 76.8z m-116.8-235.6c-11.2 0-21.6 4.4-29.6 12-8 8-12 18.4-12 29.6 0 11.2 4.4 21.6 12 29.6l146.4 146.4 58.8-58.8-146.4-146.4c-7.6-8-18.4-12.4-29.2-12.4z' fill='%234A555F' p-id='17933'%3E%3C/path%3E%3Cpath d='M712.4 817.6c-10.4-10.4-10.4-27.6 0-38 5.2-5.2 12-8 19.2-8 7.2 0 14 2.8 19.2 8l136 136-38 38-136.4-136z' fill='%23F68F6F' p-id='17934'%3E%3C/path%3E%3Cpath d='M892 1024c-7.6 0-14.4-2.8-20-8.4l-32.4-32.4 76.8-76.8 32.4 32.4c10.8 10.8 10.8 28.8 0 39.6l-37.2 37.2c-5.2 5.6-12.4 8.4-19.6 8.4z m-34.4-40.4l23.6 23.6c6 6 16 6 22 0l37.2-37.2c6-6 6-16 0-22l-23.6-23.6-59.2 59.2z' fill='%234A555F' p-id='17935'%3E%3C/path%3E%3Cpath d='M892 996.8c-0.4 0-0.4 0-0.4-0.4l-13.2-13.2 38-38 13.2 13.2c0.4 0.4 0.4 0.8 0 1.2l-37.2 37.2c0-0.4-0.4 0-0.4 0z' fill='%23FFD552' p-id='17936'%3E%3C/path%3E%3Cpath d='M837.6 979.6H69.2L67.2 0h770.4v846l-76.8-76.8c-8-8-18.4-12.4-29.6-12.4-11.2 0-21.6 4.4-29.6 12.4-16.4 16.4-16.4 42.8 0 58.8l135.6 135.6v16z m-755.6-12.8h741.2l-130-130c-10.4-10.4-16-24-16-38.4s5.6-28 16-38.4c10.4-10.4 24-16 38.4-16 14.4 0 28 5.6 38.4 16l55.2 55.2V12.4H79.6l2.4 954.4z' fill='%234A555F' p-id='17937'%3E%3C/path%3E%3Cpath d='M354.4 126.4h376v12.4h-376zM354.4 216.4h376v12.4h-376zM181.2 306.8h549.6v12.4H181.2zM181.2 397.2h130.4v12.4H181.2zM181.2 487.6h84v12.4h-84zM181.2 577.6h84v12.4h-84zM181.2 668h84v12.4h-84zM181.2 758.4h130.4v12.4H181.2zM181.2 848.4h212.8v12.4H181.2z' fill='%234A555F' p-id='17938'%3E%3C/path%3E%3Cpath d='M654.4 601.6l-43.6-17.2 18.8-42.8-12.8-12.8-2.4-2.4-0.4-0.4-42.8 18.8-17.2-43.6h-18.4l-17.2 43.6-42.8-18.8-12 12-0.8 1.2 18.8 42.8-43.6 17.2v18.4l43.6 17.2-18.8 42.8 4 3.6 11.2 11.2 0.4 0.4 42.8-18.8 17.2 43.6h18.4l17.2-43.6 42.8 18.8 12-12 0.8-0.8-18.8-42.8 43.6-17.2v-18.4z m-108.4 43.2c-12.8 0-24-6.8-30-17.2-3.2-5.2-4.8-11.2-4.8-17.6 0-19.2 15.6-35.2 35.2-35.2 6.4 0 12.4 1.6 17.2 4.8 10.4 6 17.6 17.2 17.6 30.4 0 19.2-15.6 34.8-35.2 34.8z' fill='%2371CDE1' p-id='17939'%3E%3C/path%3E%3Cpath d='M561.2 723.6h-26.8l-16.4-41.6-41.2 18-3.2-4-18-18 17.6-40.8-41.6-16.4v-26.8l41.6-16.4-17.6-40.8 4-4 15.2-15.2 40.8 17.6 16.4-41.6h26.8l16.4 41.6 40.8-17.6 21.6 21.6-18 40.8 41.6 16.4v26.8l-41.6 16.4 18 40.8-4 4-14.8 14.8-40.8-18-16.8 42.4z m-18.4-12.4h9.6l18-45.6 44.8 19.6 6.8-6.8-19.6-44.8 45.6-18v-9.6l-45.6-18 19.6-44.8-9.6-9.6-44.8 19.6-18-45.6H540l-18 45.6-45.2-19.6-6.8 6.8 19.6 44.8-45.6 18v9.6l45.6 18-19.6 44.8 9.6 9.6 44.8-19.6 18.4 45.6z m3.2-60c-14.4 0-28-7.6-35.6-20.4-3.6-6.4-5.6-13.6-5.6-20.8 0-22.8 18.4-41.2 41.2-41.2 7.2 0 14.4 2 20.4 5.6 12.8 7.2 20.8 21.2 20.8 36 0.4 22.4-18.4 40.8-41.2 40.8z m0-70c-16 0-28.8 12.8-28.8 28.8 0 5.2 1.2 10 4 14.4 5.2 8.8 14.4 14 24.8 14 16 0 28.8-12.8 28.8-28.8 0-10.4-5.6-20-14.4-24.8-4.4-2.4-9.2-3.6-14.4-3.6zM246.4 247.6c-39.6 0-71.6-32-71.6-71.6s32-71.6 71.6-71.6 71.6 32 71.6 71.6-32 71.6-71.6 71.6z m0-130.8c-32.4 0-58.8 26.4-58.8 58.8s26.4 58.8 58.8 58.8S305.2 208.4 305.2 176s-26.4-59.2-58.8-59.2z' fill='%234A555F' p-id='17940'%3E%3C/path%3E%3Cpath d='M246.4 176m-29.2 0a29.2 29.2 0 1 0 58.4 0 29.2 29.2 0 1 0-58.4 0Z' fill='%23F68F6F' p-id='17941'%3E%3C/path%3E%3Cpath d='M246.4 211.6c-19.6 0-35.6-16-35.6-35.6s16-35.6 35.6-35.6c9.6 0 18.4 3.6 25.2 10.4 6.8 6.8 10.4 15.6 10.4 25.2 0 19.6-16 35.6-35.6 35.6z m0-58.8c-12.8 0-23.2 10.4-23.2 23.2 0 12.8 10.4 22.8 22.8 22.8 12.8 0 23.2-10.4 23.2-23.2 0-12.4-10-22.8-22.8-22.8zM156.4 169.6h39.2v12.4h-39.2z' fill='%234A555F' p-id='17942'%3E%3C/path%3E%3Cpath d='M296 169.6h39.2v12.4H296z' fill='%234A555F' p-id='17943'%3E%3C/path%3E%3Cpath d='M239.6 226H252v39.2h-12.4z' fill='%234A555F' p-id='17944'%3E%3C/path%3E%3Cpath d='M239.6 86.4H252v39.2h-12.4z' fill='%234A555F' p-id='17945'%3E%3C/path%3E%3C/svg%3E");
-   background-repeat: no-repeat;
-   background-size: 80% 80%;
-   background-position: center;
-    width: 100%;
-}
-#search .pagefind-ui__search-input,
-#search .pagefind-ui__form::before
-{
-    height: 2.5rem;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    top: unset;
-}
-{
-    height: 2.5rem;
-}
     
+	 
+	}
+	#search ol.pagefind-ui__results li {
+		padding: 0.5rem 0;
+        gap: min(calc(10px * var(--pagefind-ui-scale)),1%);
+	}
+	#search .pagefind-ui__result-thumb:empty {
+		display: inline-block;
+		height: 100%;
+		background-image: url("data:image/svg+xml,%3Csvg t='1676378865284' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='17930' width='48' height='48'%3E%3Cpath d='M542 835.6c-60.4 0-117.2-23.6-160-66.4-88-88-88-231.6 0-320 42.8-42.8 99.6-66.4 160-66.4 60.4 0 117.2 23.6 160 66.4 88 88.4 88 231.6 0 320-42.8 42.8-99.6 66.4-160 66.4z m0-440c-57.2 0-110.8 22.4-151.2 62.4-83.2 83.2-83.2 218.8 0 302 40.4 40.4 94 62.4 151.2 62.4 57.2 0 110.8-22.4 151.2-62.4 83.2-83.2 83.2-218.8 0-302-40.4-40.4-94-62.4-151.2-62.4z m0 368c-41.2 0-80-16-109.2-45.2-29.2-29.2-45.2-68-45.2-109.2s16-80 45.2-109.2c29.2-29.2 68-45.2 109.2-45.2s80 16 109.2 45.2c60.4 60.4 60.4 158.4 0 218.4-29.2 29.2-68 45.2-109.2 45.2z m0-296.4c-38 0-73.6 14.8-100.4 41.6-26.8 26.8-41.6 62.4-41.6 100.4 0 38 14.8 73.6 41.6 100.4 26.8 26.8 62.4 41.6 100.4 41.6s73.6-14.8 100.4-41.6c55.2-55.2 55.2-145.2 0-200.8-26.8-26.8-62.4-41.6-100.4-41.6z' fill='%234A555F' p-id='17931'%3E%3C/path%3E%3Cpath d='M542 808c-53.2 0-103.2-20.8-140.8-58.4-77.6-77.6-77.6-203.6 0-281.2 37.6-37.6 87.6-58.4 140.8-58.4 53.2 0 103.2 20.8 140.8 58.4 77.6 77.6 77.6 203.6 0 281.2-37.6 38-87.6 58.4-140.8 58.4z m0-368c-45.2 0-87.6 17.6-119.6 49.6S372.8 564 372.8 609.2c0 45.2 17.6 87.6 49.6 119.6s74.4 49.6 119.6 49.6c45.2 0 87.6-17.6 119.6-49.6 66-66 66-173.2 0-239.2-32-32-74.4-49.6-119.6-49.6z' fill='%23FFD552' p-id='17932'%3E%3C/path%3E%3Cpath d='M848.4 992.4l-155.6-155.6c-10.4-10.4-16-24-16-38.4 0-14.4 5.6-28 16-38.4 10.4-10.4 24-16 38.4-16 14.4 0 28 5.6 38.4 16l155.6 155.6-76.8 76.8z m-116.8-235.6c-11.2 0-21.6 4.4-29.6 12-8 8-12 18.4-12 29.6 0 11.2 4.4 21.6 12 29.6l146.4 146.4 58.8-58.8-146.4-146.4c-7.6-8-18.4-12.4-29.2-12.4z' fill='%234A555F' p-id='17933'%3E%3C/path%3E%3Cpath d='M712.4 817.6c-10.4-10.4-10.4-27.6 0-38 5.2-5.2 12-8 19.2-8 7.2 0 14 2.8 19.2 8l136 136-38 38-136.4-136z' fill='%23F68F6F' p-id='17934'%3E%3C/path%3E%3Cpath d='M892 1024c-7.6 0-14.4-2.8-20-8.4l-32.4-32.4 76.8-76.8 32.4 32.4c10.8 10.8 10.8 28.8 0 39.6l-37.2 37.2c-5.2 5.6-12.4 8.4-19.6 8.4z m-34.4-40.4l23.6 23.6c6 6 16 6 22 0l37.2-37.2c6-6 6-16 0-22l-23.6-23.6-59.2 59.2z' fill='%234A555F' p-id='17935'%3E%3C/path%3E%3Cpath d='M892 996.8c-0.4 0-0.4 0-0.4-0.4l-13.2-13.2 38-38 13.2 13.2c0.4 0.4 0.4 0.8 0 1.2l-37.2 37.2c0-0.4-0.4 0-0.4 0z' fill='%23FFD552' p-id='17936'%3E%3C/path%3E%3Cpath d='M837.6 979.6H69.2L67.2 0h770.4v846l-76.8-76.8c-8-8-18.4-12.4-29.6-12.4-11.2 0-21.6 4.4-29.6 12.4-16.4 16.4-16.4 42.8 0 58.8l135.6 135.6v16z m-755.6-12.8h741.2l-130-130c-10.4-10.4-16-24-16-38.4s5.6-28 16-38.4c10.4-10.4 24-16 38.4-16 14.4 0 28 5.6 38.4 16l55.2 55.2V12.4H79.6l2.4 954.4z' fill='%234A555F' p-id='17937'%3E%3C/path%3E%3Cpath d='M354.4 126.4h376v12.4h-376zM354.4 216.4h376v12.4h-376zM181.2 306.8h549.6v12.4H181.2zM181.2 397.2h130.4v12.4H181.2zM181.2 487.6h84v12.4h-84zM181.2 577.6h84v12.4h-84zM181.2 668h84v12.4h-84zM181.2 758.4h130.4v12.4H181.2zM181.2 848.4h212.8v12.4H181.2z' fill='%234A555F' p-id='17938'%3E%3C/path%3E%3Cpath d='M654.4 601.6l-43.6-17.2 18.8-42.8-12.8-12.8-2.4-2.4-0.4-0.4-42.8 18.8-17.2-43.6h-18.4l-17.2 43.6-42.8-18.8-12 12-0.8 1.2 18.8 42.8-43.6 17.2v18.4l43.6 17.2-18.8 42.8 4 3.6 11.2 11.2 0.4 0.4 42.8-18.8 17.2 43.6h18.4l17.2-43.6 42.8 18.8 12-12 0.8-0.8-18.8-42.8 43.6-17.2v-18.4z m-108.4 43.2c-12.8 0-24-6.8-30-17.2-3.2-5.2-4.8-11.2-4.8-17.6 0-19.2 15.6-35.2 35.2-35.2 6.4 0 12.4 1.6 17.2 4.8 10.4 6 17.6 17.2 17.6 30.4 0 19.2-15.6 34.8-35.2 34.8z' fill='%2371CDE1' p-id='17939'%3E%3C/path%3E%3Cpath d='M561.2 723.6h-26.8l-16.4-41.6-41.2 18-3.2-4-18-18 17.6-40.8-41.6-16.4v-26.8l41.6-16.4-17.6-40.8 4-4 15.2-15.2 40.8 17.6 16.4-41.6h26.8l16.4 41.6 40.8-17.6 21.6 21.6-18 40.8 41.6 16.4v26.8l-41.6 16.4 18 40.8-4 4-14.8 14.8-40.8-18-16.8 42.4z m-18.4-12.4h9.6l18-45.6 44.8 19.6 6.8-6.8-19.6-44.8 45.6-18v-9.6l-45.6-18 19.6-44.8-9.6-9.6-44.8 19.6-18-45.6H540l-18 45.6-45.2-19.6-6.8 6.8 19.6 44.8-45.6 18v9.6l45.6 18-19.6 44.8 9.6 9.6 44.8-19.6 18.4 45.6z m3.2-60c-14.4 0-28-7.6-35.6-20.4-3.6-6.4-5.6-13.6-5.6-20.8 0-22.8 18.4-41.2 41.2-41.2 7.2 0 14.4 2 20.4 5.6 12.8 7.2 20.8 21.2 20.8 36 0.4 22.4-18.4 40.8-41.2 40.8z m0-70c-16 0-28.8 12.8-28.8 28.8 0 5.2 1.2 10 4 14.4 5.2 8.8 14.4 14 24.8 14 16 0 28.8-12.8 28.8-28.8 0-10.4-5.6-20-14.4-24.8-4.4-2.4-9.2-3.6-14.4-3.6zM246.4 247.6c-39.6 0-71.6-32-71.6-71.6s32-71.6 71.6-71.6 71.6 32 71.6 71.6-32 71.6-71.6 71.6z m0-130.8c-32.4 0-58.8 26.4-58.8 58.8s26.4 58.8 58.8 58.8S305.2 208.4 305.2 176s-26.4-59.2-58.8-59.2z' fill='%234A555F' p-id='17940'%3E%3C/path%3E%3Cpath d='M246.4 176m-29.2 0a29.2 29.2 0 1 0 58.4 0 29.2 29.2 0 1 0-58.4 0Z' fill='%23F68F6F' p-id='17941'%3E%3C/path%3E%3Cpath d='M246.4 211.6c-19.6 0-35.6-16-35.6-35.6s16-35.6 35.6-35.6c9.6 0 18.4 3.6 25.2 10.4 6.8 6.8 10.4 15.6 10.4 25.2 0 19.6-16 35.6-35.6 35.6z m0-58.8c-12.8 0-23.2 10.4-23.2 23.2 0 12.8 10.4 22.8 22.8 22.8 12.8 0 23.2-10.4 23.2-23.2 0-12.4-10-22.8-22.8-22.8zM156.4 169.6h39.2v12.4h-39.2z' fill='%234A555F' p-id='17942'%3E%3C/path%3E%3Cpath d='M296 169.6h39.2v12.4H296z' fill='%234A555F' p-id='17943'%3E%3C/path%3E%3Cpath d='M239.6 226H252v39.2h-12.4z' fill='%234A555F' p-id='17944'%3E%3C/path%3E%3Cpath d='M239.6 86.4H252v39.2h-12.4z' fill='%234A555F' p-id='17945'%3E%3C/path%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-size: 80% 80%;
+		background-position: center;
+		width: 100%;
+	}
+	#search .pagefind-ui__search-input,
+	#search .pagefind-ui__form::before {
+		height: 2.5rem;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		top: unset;
+	}
+	 {
+		height: 2.5rem;
+	}
+    #search .pagefind-ui__result-title .pagefind-ui__result-link{   
+      color:  #32c8f6;
+    }
 </style>
 				<div class="h-12 w-12 flex items-center justify-center">
 					<!--Dark mode-->
@@ -233,7 +310,7 @@ background-image: url("data:image/svg+xml,%3Csvg t='1676378865284' class='icon' 
 					</div>
 				</div>
 				<div class="w-full md:w-auto">
-					<a href="/myhome/products/signUp/" class="relative font-sans font-normal inline-flex items-center justify-center leading-5 no-underline space-x-1 text-white bg-primary-600 h-12 px-5 py-3 text-sm rounded-xl hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/20 tw-accessibility transition-all duration-300" :class="'w-full md:w-[240px] lg:w-[110px]'">
+					<a href="/myhome/products/signUp/" class="relative font-sans font-normal inline-flex items-center justify-center leading-5 no-underline space-x-1 text-white bg-primary-600 h-12 px-5 py-3 text-sm rounded-xl hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/20 tw-accessibility transition-all duration-300" :class="'w-full md:w-[80px] lg:w-[110px] '">
   
 						注 册
 					
@@ -244,80 +321,43 @@ background-image: url("data:image/svg+xml,%3Csvg t='1676378865284' class='icon' 
 	</div>
 </div>
 
-
-
-    <!--Site search-->
-    <div id="seachbar" x-data="search()" x-cloak class="
-        fixed
-        w-screen
-        ease-in-out
-        flex flex-col
-        lg:flex-row lg:items-center
-        flex-shrink-0
-        px-5
-        bg-white
-        dark:bg-muted-800
-        border-b border-muted-200
-        dark:border-muted-700
-        transition-all
-        duration-300
-        z-[90]" style=" visibility: hidden">
-      <div class="w-full max-w-7xl mx-auto flex items-center justify-between py-3">
-        <!--Logo-->
-        <div class="w-full lg:w-auto flex items-center gap-6">
+<!--Site search-->
+<div id="searchbar" x-data="search()" x-cloak class="fixed w-screen ease-in-out flex flex-col lg:flex-row lg:items-center flex-shrink-0 px-5 bg-white dark:bg-muted-800 border-b border-muted-200 dark:border-muted-700 transition-all duration-300 z-[90]" style=" visibility: hidden">
+	<label class="md-search__overlay"></label>
+	<div class="w-full max-w-7xl mx-auto flex items-center justify-between py-3">
+		<!--Logo-->
+		<div class="w-full lg:w-auto flex items-center gap-6">
 			<a href="/myhome/" class="no-underline text-inherit flex items-center gap-3">
 				<div class="transition-all duration-300 text-primary-600">
 					<svg class="fill-current" :class="'w-7 h-7'" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M395.631 98.837C358.783 45.867 309.195 16.696 256 16.696S153.217 45.867 116.369 98.837c-35.565 51.124-55.151 118.797-55.151 190.554 0 113.54 87.379 205.913 194.783 205.913s194.783-92.373 194.783-205.913c-.001-71.756-19.588-139.43-55.153-190.554z" style="" fill="#ffc170" class=""></path><path d="M256 495.304c107.403 0 194.783-92.373 194.783-205.913 0-71.757-19.586-139.43-55.151-190.554C358.783 45.867 309.195 16.696 256 16.696" style="" fill="#e1a05a" data-original="#ffd6a0" class=""></path><path d="M0 128h55.652v33.391H0z" style="" fill="#a0bdd4" class=""></path><path d="M13.053 51.94h55.65v33.391h-55.65z" style="" transform="rotate(-160.527 40.878 68.636)" fill="#a0bdd4" class=""></path><path d="M456.348 128H512v33.391h-55.652z" style="" fill="#a0bdd4" class=""></path><path d="M454.411 40.807h33.391v55.65h-33.391z" style="" transform="rotate(-109.469 471.111 68.636)" fill="#a0bdd4" class=""></path><path d="m187.719 277.315 14.949-29.896-47.598-21.154-93.659 51.085c-.124 4-.194 8.013-.194 12.041 0 8.564.505 17.005 1.471 25.298l93.892-51.214 31.139 13.84zM450.63 278.997l-105.587-52.794-89.463 44.731-22.369-9.942-14.948 29.896 38.155 16.958 88.625-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228c.001-3.476-.059-6.938-.152-10.394z" style="" fill="#f8f8f8" class=""></path><path d="m450.63 278.997-105.587-52.794-89.463 44.731.839 36.913 88.624-44.31 104.166 52.083a218.592 218.592 0 0 0 1.573-26.228 382.07 382.07 0 0 0-.152-10.395z" style="" fill="#fef5ea" class=""></path></g></svg>
 				</div>
 				<span class="font-sans font-extrabold text-lg tracking-widest uppercase feat dark:text-muted-100">PKMer</span>
 			</a>
-
 		</div>
-        <!--Search-->
-        <div class="w-full max-w-xl mx-auto py-3">
-          <div class="group relative w-full rounded-md shadow-sm" id="search">
-			<label class="md-search__overlay"></label>
-            <!--Empty button-->
-            <button class="
-                absolute
-                top-0
-                right-0
-                h-10
-                w-10
-                flex
-                justify-center
-                items-center
-                text-muted-400
-                hover:text-muted-700
-                dark:hover:text-muted-100
-                transition-colors
-                duration-300
-                cursor-pointer
-              " :class="searchTerms === '' ? 'hidden' : 'block'" @click="searchTerms = ''">
-              <i class="iconify w-4 h-4" data-icon="lucide:x"></i>
-            </button>
-          </div>
-        </div>
-		 
-        <!--Dismiss-->
-        <div>
-          <button type="button" class="
-              font-sans font-semibold
-              text-sm text-muted-400
-              hover:text-primary-500
-              transition-colors
-              duration-300
-            " @click="toggleSearch()">
-            Close search
-          </button>
-        </div>
-      </div>
-    </div>
+
+		<!--Search-->
+		<div class="w-full max-w-xl mx-auto py-3">
+			<div class="group relative w-full rounded-md shadow-sm" id="search">
+				<!--Empty button-->
+				<button class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-muted-400 hover:text-muted-700 dark:hover:text-muted-100 transition-colors duration-300 cursor-pointer" :class="searchTerms === '' ? 'hidden' : 'block'" @click="searchTerms = ''">
+					<i class="iconify w-4 h-4" data-icon="lucide:x"></i>
+				</button>
+			</div>
+		</div>
+
+		<!--Dismiss-->
+		<div>
+			<button type="button" class="bg-transparent font-sans font-semibold text-sm text-muted-400 hover:text-primary-500 transition-colors duration-300" @click="toggleSearch()">
+				Close search
+			</button>
+		</div>
+	</div>
+</div>
 		<main class="layout astro-37FXCHFA">
 			<aside id="left-sidebar" class="sidebar astro-37FXCHFA">
 						
 							<nav aria-label="站点导航" class="astro-KQNE5HRN">
-	<style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}</script><astro-island uid="Z1bBeYB" component-url="/myhome/_astro/SidebarToggleTabGroup.3fe74856.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;defaultActiveTab&quot;:[0,&quot;learn&quot;],&quot;labels&quot;:[0,{&quot;learn&quot;:[0,&quot;学习&quot;],&quot;api&quot;:[0,&quot;参考&quot;]}],&quot;class&quot;:[0,&quot;astro-KQNE5HRN&quot;]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;SidebarToggleTabGroup&quot;,&quot;value&quot;:true}" await-children=""><div class="TabGroup"><button class="active">学习</button><button class>参考</button></div></astro-island>
+	<style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}</script><astro-island uid="Z1bBeYB" component-url="/myhome/_astro/SidebarToggleTabGroup.3d56fe87.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;defaultActiveTab&quot;:[0,&quot;learn&quot;],&quot;labels&quot;:[0,{&quot;learn&quot;:[0,&quot;学习&quot;],&quot;api&quot;:[0,&quot;参考&quot;]}],&quot;class&quot;:[0,&quot;astro-KQNE5HRN&quot;]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;SidebarToggleTabGroup&quot;,&quot;value&quot;:true}" await-children=""><div class="TabGroup"><button class="active">学习</button><button class>参考</button></div></astro-island>
 	<ul class="nav-groups astro-KQNE5HRN">
 		<li class="nav-group learn active astro-MSUTNKFE">
 			<details open class="astro-MSUTNKFE">
@@ -427,9 +467,7 @@ background-image: url("data:image/svg+xml,%3Csvg t='1676378865284' class='icon' 
 			</details>
 		</li>
 		
-		<li style="text-align: center;" class="astro-KQNE5HRN">
-			<script>(self.Astro=self.Astro||{}).visible=(s,c,n)=>{const r=async()=>{await(await s())()};let i=new IntersectionObserver(e=>{for(const t of e)if(!!t.isIntersecting){i.disconnect(),r();break}});for(let e=0;e<n.children.length;e++){const t=n.children[e];i.observe(t)}},window.dispatchEvent(new Event("astro:visible"));</script><astro-island uid="1A3APh" component-url="/myhome/_astro/ThemeToggleButton.448fa887.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;labels&quot;:[0,{&quot;useLight&quot;:[0,&quot;明亮&quot;],&quot;useDark&quot;:[0,&quot;暗黑&quot;]}],&quot;class&quot;:[0,&quot;astro-KQNE5HRN&quot;]}" ssr="" client="visible" opts="{&quot;name&quot;:&quot;ThemeToggleButton&quot;,&quot;value&quot;:true}" await-children=""><div class="theme-toggle "><label title="明亮" class><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg><input type="radio" name="theme-toggle" value="light" aria-label="明亮" /></label><label title="暗黑" class><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><input type="radio" name="theme-toggle" value="dark" aria-label="暗黑" /></label></div></astro-island>
-		</li>
+
 	</ul>
 </nav>
 
@@ -438,14 +476,14 @@ background-image: url("data:image/svg+xml,%3Csvg t='1676378865284' class='icon' 
 					</aside>
 			<aside id="right-sidebar" class="sidebar astro-37FXCHFA">
 						<script>(self.Astro=self.Astro||{}).media=(s,a)=>{const t=async()=>{await(await s())()};if(a.value){const e=matchMedia(a.value);e.matches?t():e.addEventListener("change",t,{once:!0})}},window.dispatchEvent(new Event("astro:media"));</script><nav class="astro-ROIVMLUZ">
-	<astro-island uid="1Odrux" component-url="/myhome/_astro/TableOfContents.187c6832.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;toc&quot;:[1,&quot;[[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;前言\&quot;],\&quot;text\&quot;:[0,\&quot;前言\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;text\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;text\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}]]&quot;],&quot;labels&quot;:[0,{&quot;onThisPage&quot;:[0,&quot;目录&quot;]}],&quot;isMobile&quot;:[0,false],&quot;class&quot;:[0,&quot;astro-ROIVMLUZ&quot;]}" ssr="" client="media" opts="{&quot;name&quot;:&quot;TableOfContents&quot;,&quot;value&quot;:&quot;(min-width: 50em)&quot;}" await-children=""><h2 class="heading" id="on-this-page-heading">目录</h2><ul class="toc-root"><li><a class="header-link depth-2 current-header-link" href="#前言">前言</a></li><li><a class="header-link depth-2" href="#本文档适合哪些人">本文档适合哪些人</a></li><li><a class="header-link depth-2" href="#如何阅读本文档">如何阅读本文档</a></li></ul></astro-island>
+	<astro-island uid="1Odrux" component-url="/myhome/_astro/TableOfContents.e6943719.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;toc&quot;:[1,&quot;[[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;前言\&quot;],\&quot;text\&quot;:[0,\&quot;前言\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;text\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;text\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}]]&quot;],&quot;labels&quot;:[0,{&quot;onThisPage&quot;:[0,&quot;目录&quot;]}],&quot;isMobile&quot;:[0,false],&quot;class&quot;:[0,&quot;astro-ROIVMLUZ&quot;]}" ssr="" client="media" opts="{&quot;name&quot;:&quot;TableOfContents&quot;,&quot;value&quot;:&quot;(min-width: 50em)&quot;}" await-children=""><h2 class="heading" id="on-this-page-heading">目录</h2><ul class="toc-root"><li><a class="header-link depth-2 current-header-link" href="#前言">前言</a></li><li><a class="header-link depth-2" href="#本文档适合哪些人">本文档适合哪些人</a></li><li><a class="header-link depth-2" href="#如何阅读本文档">如何阅读本文档</a></li></ul></astro-island>
 </nav>
 					</aside>
 			<div id="main-content" class="main-column astro-37FXCHFA">
 				<div class="astro-J75B3YUS">
     <div class="fixed-mobile-bar astro-J75B3YUS">
 					<nav>
-						<astro-island uid="Z11n1TP" component-url="/myhome/_astro/TableOfContents.187c6832.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;toc&quot;:[1,&quot;[[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;回到顶部\&quot;],\&quot;text\&quot;:[0,\&quot;回到顶部\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;text\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;text\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}]]&quot;],&quot;labels&quot;:[0,{&quot;onThisPage&quot;:[0,&quot;目录&quot;]}],&quot;isMobile&quot;:[0,true]}" ssr="" client="media" opts="{&quot;name&quot;:&quot;TableOfContents&quot;,&quot;value&quot;:&quot;(max-width: 72em)&quot;}" await-children=""><details class="toc-mobile-container"><summary class="toc-mobile-header"><div class="toc-mobile-header-content"><div class="toc-toggle"><h2 class="heading" id="on-this-page-heading">目录</h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path></svg></div><span class="toc-current-heading">回到顶部</span></div></summary><ul class="toc-root"><li><a class="header-link depth-2 current-header-link" href="#回到顶部">回到顶部</a></li><li><a class="header-link depth-2" href="#本文档适合哪些人">本文档适合哪些人</a></li><li><a class="header-link depth-2" href="#如何阅读本文档">如何阅读本文档</a></li></ul></details></astro-island>
+						<astro-island uid="Z11n1TP" component-url="/myhome/_astro/TableOfContents.e6943719.js" component-export="default" renderer-url="/myhome/_astro/client.2eaa1aaf.js" props="{&quot;toc&quot;:[1,&quot;[[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;回到顶部\&quot;],\&quot;text\&quot;:[0,\&quot;回到顶部\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;text\&quot;:[0,\&quot;本文档适合哪些人\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}],[0,{\&quot;depth\&quot;:[0,2],\&quot;slug\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;text\&quot;:[0,\&quot;如何阅读本文档\&quot;],\&quot;children\&quot;:[1,\&quot;[]\&quot;]}]]&quot;],&quot;labels&quot;:[0,{&quot;onThisPage&quot;:[0,&quot;目录&quot;]}],&quot;isMobile&quot;:[0,true]}" ssr="" client="media" opts="{&quot;name&quot;:&quot;TableOfContents&quot;,&quot;value&quot;:&quot;(max-width: 72em)&quot;}" await-children=""><details class="toc-mobile-container"><summary class="toc-mobile-header"><div class="toc-mobile-header-content"><div class="toc-toggle"><h2 class="heading" id="on-this-page-heading">目录</h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path></svg></div><span class="toc-current-heading">回到顶部</span></div></summary><ul class="toc-root"><li><a class="header-link depth-2 current-header-link" href="#回到顶部">回到顶部</a></li><li><a class="header-link depth-2" href="#本文档适合哪些人">本文档适合哪些人</a></li><li><a class="header-link depth-2" href="#如何阅读本文档">如何阅读本文档</a></li></ul></details></astro-island>
 					</nav>
 				</div><div class="spacer astro-J75B3YUS"></div>
     <article id="article" class="content astro-J75B3YUS">

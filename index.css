@@ -312,6 +312,12 @@ strong {
 	color: inherit;
 }
 
+.feat {
+    -webkit-text-stroke: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(120deg,#43d3ff 20%,#baaaff 80%);
+}
 /* Supporting Content */
 code {
 	--border-radius: 3px;
